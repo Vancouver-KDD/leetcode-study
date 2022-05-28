@@ -18,8 +18,8 @@
 > 🖋 셀프 스터디
 - 월-금에 거쳐 1일 1문제(총 5문제 풀기)
 - 문제는 Blind 75 easy & medium (https://neetcode.io/)
-- 공부 후 정답을 **pull request**에 **금요일**까지 올리기 (Any programming language)
-- **풀이 방법 1줄 요약**을  **금요일**까지 구글 시트에 올리기 (Example: https://docs.google.com/spreadsheets/d/1K7IwM8SNn7A05kGSOwwXsulr19qobZxCMy7x8lEX904/edit#gid=0)
+- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
+- **풀이 방법 1줄 요약**을 **일요일** 모임전 까지 구글 시트에 올리기 (Example: https://docs.google.com/spreadsheets/d/1K7IwM8SNn7A05kGSOwwXsulr19qobZxCMy7x8lEX904/edit#gid=0)
 
 > 🔖 모의 인터뷰
 - 온라인 모의 인터뷰 **매주 일요일 저녁 8-10**
