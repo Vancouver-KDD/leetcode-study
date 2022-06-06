@@ -2,5 +2,5 @@
 
 Introduction for the KDD LEETCODE study
 
--[x] Github setup
+- [x] Github setup
 
