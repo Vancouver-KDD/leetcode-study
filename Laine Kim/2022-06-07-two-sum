@@ -1,0 +1,50 @@
+1. O(n^2), Brute force
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int subtraction;
+        int arrLength = nums.length;
+        int[] answer = {-1, -1};
+
+        for (int i = 0; i < arrLength; i++) {
+            subtraction = target - nums[i];
+
+            for (int j = i+1; j < arrLength; j++) {
+              if (nums[j] == subtraction) {
+                 answer[0] = i;
+                 answer[1] = j;
+                 return answer;
+              }
+            }
+        }
+        return answer;
+    }
+}
+
+
+2. Hashmap solution O(n)
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+       Map<Integer, Integer> map = new HashMap();
+        for (int i = 0; i < nums.length; i++) {
+            int subtraction = target - nums[i];
+            if (map.containsKey(subtraction)) {
+                return new int[] {i, map.get(subtraction)};
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        return new int[]{};
+    }
+}
+
+# Study note
+- Forgot Java syntax & Hashmap structure in Java, should be wary of it
+- Hashmap: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
+  1) get(Object key)
+    Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+
+  2) put(K key, V value)
+    - Associates the specified value with the specified key in this map. If the map previously contained a mapping for the key, the old value is replaced.
+    - Returns: the previous value associated with key, or null if there was no mapping for key. (A null return can also indicate that the map previously associated null with key.)
