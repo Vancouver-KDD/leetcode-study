@@ -1,0 +1,28 @@
+//Java
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+         Map<Integer, Integer> HM = new HashMap<>();
+        
+        for (int i=0; i<nums.length; i++){
+            if (HM.containsKey(nums[i])){
+                return true;
+            }else{
+                HM.put(nums[i], i);
+            }
+        }
+        return false;
+    }
+}
+
+//JavaScript
+var containsDuplicate = function(nums) {
+    var HM = new Map();
+    for (let i=0; i<nums.length; i++){
+        if (HM.has(nums[i])){
+            return true;
+        }else{
+            HM.set(nums[i], i);
+        }
+    }
+    return false;
+};

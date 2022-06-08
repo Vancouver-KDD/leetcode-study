@@ -1,4 +1,4 @@
-
+//Using for-loop
 public class TwoSum {
 
 	class Solution {
@@ -17,5 +17,21 @@ public class TwoSum {
 	        return output;
 	    }
 	}
+}
 
+//Using HashMap
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> HM = new HashMap<>();
+        for (int i=0; i<nums.length; i++){
+            int com = target - nums[i];
+            
+            if (HM.containsKey(com)){
+                return new int[]{i, HM.get(com)};
+            } else{
+                HM.put(nums[i], i);
+            }
+        }
+        return null;
+    }
 }
