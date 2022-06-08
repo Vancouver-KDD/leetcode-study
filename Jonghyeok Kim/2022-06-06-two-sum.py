@@ -9,3 +9,4 @@ class Solution:
                 return [index, hash_map[diff]]
             else:
                 hash_map[nums[index]] = index
+                
