@@ -1,0 +1,86 @@
+1.
+- iterate the array
+- store the smallest price in the array (value, profit(0))
+- if the next element is smaller than the previous one, remove the current key and store the new value with profit 0
+- if the element is larger than previous one, record the profit for the key with new profit (new elem - prev elem)
+
+edge case
+- only one element
+- two elements - doesn't matter
+
+# hashmap/array are necessary?
+
+2nd try
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        if (n == 1) {
+          return 0;
+        }
+
+        int[] record = { prices[0], 0 };
+
+        for (int i = 1; i < n; i++) {
+            if (prices[i] < record[0]) {
+                record[0] = prices[i];
+                record[1] = 0;
+            }
+
+            int profit = prices[i] - record[0];
+            if (profit > record[1]) {
+              record[1] = profit;
+            }
+        }
+        return record[1];
+    }
+}
+
+3rd improvement
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        if (n == 1) {
+          return 0;
+        }
+
+        int buyingPoint = prices[0];
+        int maxProfit = 0;
+
+        for (int i = 1; i < n; i++) {
+            int profitIfSoldNow = prices[i] - buyingPoint;
+
+            if (profitIfSoldNow < 0) {
+                buyingPoint = prices[i];
+                maxProfit = 0;
+            }
+            if (profitIfSoldNow > maxProfit) {
+              maxProfit = profitIfSoldNow;
+            }
+        }
+        return maxProfit;
+    }
+}
+
+----
+First wrong solution submitted.
+class Solution {
+    public int maxProfit(int[] prices) {
+        int n = prices.length;
+        if (n == 1) {
+          return 0;
+        }
+
+        int[] record = {0, 0};
+
+        for (int i = 0; i < n; i++) {
+            if (prices[i] < record[0]) {
+                record[0] = prices[i];
+            }
+            else {
+              record[1] = prices[i] - record[0];
+            }
+        }
+        return record[1];
+    }
+}
+--> Wrong. if/else condition it should be about profit, not just the element comparison
