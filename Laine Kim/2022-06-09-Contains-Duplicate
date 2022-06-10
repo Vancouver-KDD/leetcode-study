@@ -1,0 +1,47 @@
+
+duplicate -> use hashmap to check the key is stored already
+store the elem value in the hashmap, and check by contaninsKey. index is not needed
+edge case: nums.length is 1, false
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int n = nums.length;
+        if (n == 1) {
+            return false;
+        }
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            if (map.containsKey(nums[i])) {
+                return true;
+            }
+            map.put(nums[i], i);
+        }
+
+        return false;
+    }
+}
+--> draft, okay.
+
+2nd improvement
+- But index value is not required, is map the best structure?. Just a hashset, searched the solution ideas.
+- edge case can be handled inside the loop?
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (set.contains(num)) {
+                return true;
+            }
+            set.add(num);
+        }
+
+        return false;
+    }
+}
+
+Hashset: https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html
+method
+1)contains -> return boolean
+2)add -> return true if this set did not already contain the specified element. so if the element is already there, return false
