@@ -1,0 +1,106 @@
+3rd, learned from leetcode discussion
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+       int n = nums.length;
+       int[] answer = new int[n];
+
+       answer[0] = 1;
+       for (int i = 1; i < n; i++){
+           answer[i] = answer[0] * nums[i-1];
+       }
+
+       int backwardMultipliedVal = 1;
+       for (int i = n-2; i >= 1; i--){
+           backwardMultipliedVal = backwardMultipliedVal * nums[i+1];
+           answer[i] =  answer[i-1] * backwardMultipliedVal;
+       }
+       answer[0] = answer[1] * backwardMultipliedVal;
+       return answer;
+    }
+}
+--> Wrong, the zero case is not handled at the last index because I didn't touch the last index.
+
+4th. good one
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+       int n = nums.length;
+       int[] answer = new int[n];
+
+       answer[0] = 1;
+       for (int i = 1; i < n; i++){
+           answer[i] = answer[i-1] * nums[i-1];
+       }
+
+       int backwardMultipliedVal = 1;
+       for (int i = n-1; i >= 0; i--){
+           answer[i] =  answer[i] * backwardMultipliedVal;
+           backwardMultipliedVal = backwardMultipliedVal * nums[i];
+       }
+       return answer;
+    }
+}
+--> Do I need to handle more than one zero input case, which returns array of all zero? time complexity doesn't change.
+
+
+- Multiply everything and divide at each element - banned from the question condition
+- Edge case - if there's 0 in the array then all are 0 except the answer[i] elem
+
+First try - without meeting the condition, no use of division operation
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] answer = new int[n];
+        int product = 1;
+
+        for (int num: nums) {
+            product = product * num;
+        }
+
+        for (int i = 0; i < n; i++){
+            answer[i] = product / nums[i];
+        }
+        return answer;
+    }
+}
+
+With edge case handling - with zero. it should be handled otherwise error can be thrown. But still using division operator so wrong.
+
+class Solution {
+    HashSet<Integer> set = new HashSet<>();
+    int product = 1;
+
+    public int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+        int[] answer = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 0) {
+                set.add(i);
+            } else {
+                product = product * nums[i];
+            }
+            answer[i] = 0;
+        }
+
+        if (set.size() > 0){
+            return handleInputWithZero(answer);
+        }
+
+        for (int i = 0; i < n; i++){
+            answer[i] = product / nums[i];
+        }
+        return answer;
+    }
+
+    private int[] handleInputWithZero(int[] answer) {
+        if (set.size() > 1) {
+            return answer;
+        }
+        for (Integer index: set){
+             int a = index;
+             answer[a] = product;
+
+        }
+        return answer;
+    }
+}
