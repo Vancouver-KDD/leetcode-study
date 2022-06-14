@@ -1,11 +1,10 @@
 function maxProduct(nums) {
+  
   // [ -2, 4, -2, 4]
   //          4 -8  -8 16  64 -32
   // max = -2,  4,   16,    64
   // min = -2, -8,   -8,   -32
   // finalMax = -2, 4. 16, 64
-
-
 
   let min = nums[0];
   let max = nums[0];
