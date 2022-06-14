@@ -3,11 +3,10 @@ public class Solution {
         
         int prevMin = nums[0];
         int prevMax = nums[0];
+        int globalMax = nums[0];
         
         int currMin;
         int currMax;
-        
-        int globalMax = nums[0];
         int currVal;
         
         
