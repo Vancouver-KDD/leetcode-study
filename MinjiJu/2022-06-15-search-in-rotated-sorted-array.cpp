@@ -1,8 +1,6 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        
-        int res = 0;
 
         // find index of target within given array
         auto it = find(nums.begin(),nums.end(),target);

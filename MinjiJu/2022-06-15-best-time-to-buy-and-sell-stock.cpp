@@ -8,7 +8,7 @@ public:
 
         for(int i=1; i<prices.size(); i++){
             if(prices[i]<prices[i-1]){
-                minprice = fmin(minprice,prices[i]);
+                minprice = min(minprice,prices[i]);
             } else {
                 profit = max(profit, prices[i]-minprice);
             }
