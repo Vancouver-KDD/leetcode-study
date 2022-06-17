@@ -14,6 +14,7 @@ class Solution:
             curMaxpro = max(n * curMaxpro, n * curMinpro, n)
             curMinpro = min(tmp, n * curMinpro, n)
             find = max(find, curMaxpro)
+
         return find
 
     # test commit
