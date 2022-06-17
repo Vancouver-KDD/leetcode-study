@@ -1,6 +1,7 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         # [2,3,-2,4] -> 2 * 3 : should be consecutive subarray
+        # commit test1 2 3 4
 
         find = max(nums)
         curMaxpro, curMinpro = 1, 1
