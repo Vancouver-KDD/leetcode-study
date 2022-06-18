@@ -1,4 +1,3 @@
-from operator import le
 from typing import List
 
 class Solution:
