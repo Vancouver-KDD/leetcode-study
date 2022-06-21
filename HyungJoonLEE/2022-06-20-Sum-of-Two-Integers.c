@@ -3,9 +3,9 @@
 int getSum(int a, int b){
 
     while (b) {
-        int temp = (unsigned)(a & b) << 1;
+        unsigned temp = (unsigned)(a & b) << 1;
         a = a ^ b;
-        b = temp;
+        b = (int)temp;
     }
     return a;
 }
