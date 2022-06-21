@@ -1,7 +1,7 @@
 #include "common.h"
 
 int compare(const int* a, const int* b){
-    return (*a - *b);
+    return *(int *)a - *(int *)b;
 }
 
 /**
@@ -10,15 +10,16 @@ int compare(const int* a, const int* b){
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
-    *returnSize = 0;
-    *returnColumnSizes = (int*)malloc(numsSize * numsSize * sizeof(int));
+    *returnSize = 0;    // 1차 배열 index
+    //TODO: returnColumnSizes 용도?
+    //*returnColumnSizes = (int*)malloc(numsSize * numsSize * sizeof(int));
     int ** result = (int**)malloc(numsSize * numsSize * sizeof(int*));// malloc array initial, just set one array size
     if(numsSize<3) return result;
 
     qsort(nums, numsSize, sizeof(int), compare);
     int i = 0, j, k;
 
-    while(i<numsSize-2) {
+    while(i < numsSize - 2) {
         if(i != 0 && nums[i] == nums[i-1]) {
             i++;
             continue;
@@ -34,7 +35,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
                         continue;
                     }
                 }
-                (*returnColumnSizes)[*returnSize] = 3;
+//                 (*returnColumnSizes)[*returnSize] = 3;
                 result[*returnSize] = malloc(sizeof(int) * 3);
                 result[*returnSize][0] = nums[i];
                 result[*returnSize][1] = nums[j];
