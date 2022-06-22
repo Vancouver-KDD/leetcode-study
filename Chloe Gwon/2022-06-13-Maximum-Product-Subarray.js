@@ -12,3 +12,20 @@ var maxProduct = function(nums) {
     
     return finalMax;
 };
+
+//Better solution
+var maxProduct = function(nums) {
+    var min = nums[0];
+    var max = nums[0];
+    var result = nums[0];
+    
+    for (var i=1; i<nums.length; i++){
+        
+        var tempMax = Math.max(nums[i]*max, Math.max(nums[i]*min, nums[i]));
+        min = Math.min(nums[i]*max, Math.min(nums[i]*min, nums[i]));
+        
+        max = tempMax;
+        result = Math.max(result, max);
+    }
+    return result;
+};
