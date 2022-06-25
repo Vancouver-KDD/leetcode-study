@@ -27,17 +27,11 @@ class Solution {
 Brute force
 class Solution {
     public int[] countBits(int n) {
-        List<Integer> res = new ArrayList<>();
+        int[] res = new int[n+1];
         for (int i = 0; i < n+1; i++) {
             res.add(countIntBits(i));
         }
-
-        int[] resArr = new int[res.size()];
-
-        for (int j = 0; j < n+1; j++) {
-            resArr[j] = res.get(j);
-        }
-        return resArr;
+        return res;
     }
 
      private int countIntBits(int n) {
