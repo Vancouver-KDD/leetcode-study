@@ -15,5 +15,3 @@ class Solution {
         return max;
     }
 }
-
-//

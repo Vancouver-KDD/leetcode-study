@@ -12,7 +12,7 @@ class Solution:
             if nums[mid] < nums[l]:
                 l = mid
             else:
-                f = mid + 1
+                f = mid + 1 # move to the + 1 right
 
         return nums[l]
 
