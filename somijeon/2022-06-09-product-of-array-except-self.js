@@ -12,6 +12,8 @@
 // Input: nums = [-1,1,0,-3,3]
 // Output: [0,0,9,0,0]
 
+// TC = linear complexity O(2N) --> O(N)
+// SC = O(N)
 const productExceptSelf = function (nums) {
   var result = [];
   let product = 1;
