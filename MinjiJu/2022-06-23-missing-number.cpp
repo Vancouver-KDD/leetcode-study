@@ -1,9 +1,10 @@
 // using bit manipulation
-// using property (x^x=0), (x^0=x), commutative property
+// using properties (x^x=0), (x^0=x) and commutative property of xor
 // e.g. [0 1 3 2 5]
 //      res = 5 = nums.length()
+//              because given there exists a single missing element in {0,1,2,...,n-1}: missing element is n
 //      5^(0^0)^(1^1)^(2^3)^(3^2)^(4^5)
-//      (0)^(0)^(2^2)^(3^3)^4^(5^5)
+//      0^0^(2^2)^(3^3)^4^(5^5)
 //      0^4
 //      4
 class Solution {
