@@ -1,1 +1,0 @@
-/usr/local/Cellar/gcc/11.2.0/bin/gcc-11 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test.dir/main.c.o -o test 
