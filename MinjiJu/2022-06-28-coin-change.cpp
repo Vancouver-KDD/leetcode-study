@@ -1,23 +1,17 @@
-// failed solution
+// iterate over all possible combinations
+
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
         
-        if(amount==0) return 0;
+        vector<int> dp(amount+1, amount+1);
+        dp[0] = 0;
         
-        sort(coins.begin(),coins.end());
-        int count = 0, temp=0, denom=coins.size()-1;
-        
-        while(amount>0 && denom>=0){
-            temp = amount/coins[denom];
-            amount%=coins[denom];
-            
-            count+=temp;
-            denom--;
-            
-            if(amount==0) return count;
+        for(int coin : coins){
+            for(int i=coin; i<=amount; i++){
+                dp[i] = min(dp[i], dp[i-coin]+1);
+            }
         }
-        
-        return -1;
+        return dp[amount] > amount ? -1 : dp[amount];
     }
 };
