@@ -14,14 +14,27 @@
 // 5 --> 101
 
 const countBits = function (n) {
-  let res = [0];
-  for (let i = 1; i <= n; i++) {
-    const half = i >> 1;
-    const odd = i & 1;
-    res[i] = res[half] + odd;
+  let result = Array(n + 1).fill(0);
+  let offset = 1;
+  for (let i = 1; i < n + 1; i++) {
+    if (offset * 2 === i) {
+      offset = i;
+    }
+    result[i] = 1 + result[i - offset];
   }
-  return res;
+
+  return result;
 };
+
+// const countBits = function (n) {
+//   let res = [0];
+//   for (let i = 1; i <= n; i++) {
+//     const half = i >> 1;
+//     const odd = i & 1;
+//     res[i] = res[half] + odd;
+//   }
+//   return res;
+// };
 
 // Fail
 // const countBits = function (n) {
