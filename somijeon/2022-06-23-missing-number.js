@@ -14,10 +14,30 @@
 // Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
 
 const missingNumber = function (nums) {
-  let ret = 0;
-  for (let i = 0; i < nums.length; ++i) {
-    ret ^= i;
-    ret ^= nums[i];
+  let xor = 0;
+  let i = 0;
+  for (i = 0; i < nums.length; i++) {
+    xor = xor ^ i ^ nums[i];
   }
-  return (ret ^= nums.length);
+
+  return xor ^ i;
 };
+
+// const missingNumber = function (nums) {
+//   let sum = 0,
+//     total = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     sum += nums[i]; // 3 3 4
+//     total += i + 1; // 1 3 6
+//   }
+//   return total - sum; // 6 - 4 = 2
+// };
+
+// const missingNumber = function (nums) {
+//   let ret = 0;
+//   for (let i = 0; i < nums.length; ++i) {
+//     ret ^= i;
+//     ret ^= nums[i];
+//   }
+//   return (ret ^= nums.length);
+// };
