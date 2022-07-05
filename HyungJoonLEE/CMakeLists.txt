@@ -5,4 +5,4 @@ set(CMAKE_C_STANDARD 11)
 set(Headers common.h)
 
 add_executable(HyungJoonLEE ${PROJECT_SOURCE_DIR}
-               2022-07-01-Word-Break.c)
+                permu_combi.c 2022-07-05-House-Rober.c)
