@@ -53,3 +53,7 @@ public:
         return res;
     }
 };
+
+
+// ref: 
+// https://leetcode.com/problems/house-robber/discuss/1605797/C%2B%2BPython-4-Simple-Solutions-w-Explanation-or-Optimization-from-Brute-Force-to-DP
