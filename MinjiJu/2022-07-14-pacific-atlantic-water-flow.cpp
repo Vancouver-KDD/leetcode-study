@@ -5,15 +5,15 @@ public:
         
         int n=height.size(), m=height[0].size();
         
-        if(ocean[i][j]==false){
+        if(!ocean[i][j]){
             ocean[i][j] = true;
-            if(i>0 && height[i-1][j]>=height[i][j] && ocean[i-1][j]==false) dfs(i-1,j,height,ocean);
-            if(j>0 && height[i][j-1]>=height[i][j] && ocean[i][j-1]==false) dfs(i,j-1,height,ocean);
-            if(i<n-1 && height[i+1][j]>=height[i][j] && ocean[i+1][j]==false) dfs(i+1,j,height,ocean);
-            if(j<m-1 && height[i][j+1]>=height[i][j] && ocean[i][j+1]==false) dfs(i,j+1,height,ocean);
-            return;
+            
+            if(i>0 && height[i-1][j]>=height[i][j] && !ocean[i-1][j]) dfs(i-1,j,height,ocean);
+            if(j>0 && height[i][j-1]>=height[i][j] && !ocean[i][j-1]) dfs(i,j-1,height,ocean);
+            if(i<n-1 && height[i+1][j]>=height[i][j] && !ocean[i+1][j]) dfs(i+1,j,height,ocean);
+            if(j<m-1 && height[i][j+1]>=height[i][j] && !ocean[i][j+1]) dfs(i,j+1,height,ocean);
         } 
-        
+        return;
     }
     
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
@@ -41,9 +41,10 @@ public:
         // if water can flow from both pacific and atlantic, add to res
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
-                if(atlantic[i][j]==true && pacific[i][j]==true) res.push_back({i,j});
+                if(atlantic[i][j] && pacific[i][j]) res.push_back({i,j});
             }
         }
         return res;
     }
 };
+
