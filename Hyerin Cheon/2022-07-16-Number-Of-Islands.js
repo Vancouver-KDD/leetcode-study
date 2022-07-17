@@ -1,4 +1,5 @@
-var numIsland = function (grid){
+var numIslands = function (grid){
+  // number of counted island
   let countIsland = 0;
 
   for(let row = 0; row < grid.length; row++){
@@ -12,7 +13,11 @@ var numIsland = function (grid){
   return countIsland;
 }
 
+// convert stuff around us to water('0')
 function explore(row, col, grid){
+  // if row is out of bounds
+  // if col is out of bounds
+  // dont want to change water('0') to water('0')
   if(grid[row] === undefined || grid[row][col] === undefined || grid[row][col] === '0' ){
     // not execute
     return;
