@@ -1,41 +1,42 @@
-static int[] dx = {-1,0,0,1};
-static int[] dy = {0,1,-1,0};
-public List<int[]> pacificAtlantic(int[][] matrix) {
-    List<int[]> res = new ArrayList<>();
-    if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return res;
-    boolean[][] pacific = new boolean[matrix.length][matrix[0].length];
-    boolean[][] atlantic = new boolean[matrix.length][matrix[0].length];
-    for (int i = 0; i < matrix.length; i++){
-        pacific[i][0] = true;
-        atlantic[i][matrix[0].length-1] = true;
-    }
-    for (int j = 0; j < matrix[0].length; j++){
-        pacific[0][j] = true;
-        atlantic[matrix.length-1][j] = true;
-    }
-    for (int i = 0; i < matrix.length; i++){
-        explore(pacific, matrix, i, 0);
-        explore(atlantic, matrix, i, matrix[0].length-1);
-    }
-    for (int j = 0; j < matrix[0].length; j++){
-        explore(pacific, matrix, 0, j);
-        explore(atlantic, matrix, matrix.length-1, j);
-    }
-    for (int i = 0; i < matrix.length; i++){
-        for (int j = 0; j < matrix[0].length; j++){
-            if (pacific[i][j] && atlantic[i][j] == true)
-                res.add(new int[]{i,j});
+class Solution {
+    public List<List<Integer>> pacificAtlantic(int[][] matrix) {
+        List<List<Integer>> result = new ArrayList<>();
+        int row = matrix.length;
+        if (row == 0)
+            return result;
+        int col = matrix[0].length;
+        boolean [][] pacific = new boolean [row][col];
+        boolean [][] atlantic = new boolean [row][col];
+        // top bottom
+        for (int i=0; i<col; i++) {
+            dfs(matrix, 0, i, matrix[0][i], pacific);
+            dfs(matrix, row-1, i, matrix[row-1][i], atlantic);
         }
+        // left right
+        for (int i=0; i<row; i++) {
+            dfs(matrix, i, 0, matrix[i][0], pacific);
+            dfs(matrix, i, col-1, matrix[i][col-1], atlantic);
+        }
+        for (int i=0; i<row; i++) {
+            for (int j=0; j<col; j++) {
+                if (pacific[i][j] && atlantic[i][j]) {
+                    List<Integer> currentResult = new ArrayList<>();
+                    currentResult.add(i);
+                    currentResult.add(j);
+                    result.add(currentResult);
+                }
+            }
+        }
+        return result;
     }
-    return res;
     
-}
-private void explore(boolean[][] grid, int[][] matrix, int i, int j){
-    grid[i][j] = true;
-    for (int d = 0; d < dx.length; d++){
-        if (i+dy[d] < grid.length && i+dy[d] >= 0 && 
-            j + dx[d] < grid[0].length && j + dx[d] >= 0 && 
-            grid[i+dy[d]][j+dx[d]] == false && matrix[i+dy[d]][j+dx[d]] >= matrix[i][j])
-                explore(grid, matrix, i+dy[d], j+dx[d]);
+    public void dfs(int [][] matrix, int i, int j, int preHeight, boolean [][] ocean) {
+        if (i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || preHeight > matrix[i][j] || ocean[i][j])
+            return;
+        ocean[i][j] = true;
+        dfs(matrix, i+1, j, matrix[i][j], ocean);
+        dfs(matrix, i-1, j, matrix[i][j], ocean);
+        dfs(matrix, i, j+1, matrix[i][j], ocean);
+        dfs(matrix, i, j-1, matrix[i][j], ocean);
     }
 }
