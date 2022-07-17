@@ -1,28 +1,18 @@
-# O(n*n*m) Solution Time Limit
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        
-        dp = [False] * len(s)
-        wordIndices = []
+    def rob(self, nums: List[int]) -> int:
         
         
-        for i in range(len(s)-1, -1, -1):
+        if(len(nums) < 4):
+            return max(nums)
+        
+        def robArray(arrayNums: List[int]) -> int:
             
-            if s[i:] in wordDict:
-                dp[i] = True
-                wordIndices.append(i)
-            else:
-                for j in wordIndices:
-                    if s[i:j] in wordDict:
-                        dp[i] = True
-                        wordIndices.append(i)
-                        break
-        
-        
-        return dp[0]
-                    
+            dp = [0 for i in range(len(arrayNums) + 2)]
             
+            for i in range(len(arrayNums)-1, -1, -1):
+                dp[i] = max(dp[i+1], dp[i+2] + arrayNums[i])
+                
+            return dp[0]
         
-                    
-            
         
+        return max(robArray(nums[1:]) , robArray(nums[2:-1]) + nums[0])

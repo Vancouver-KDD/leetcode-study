@@ -1,28 +1,13 @@
-# O(n*n*m) Solution Time Limit
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    def uniquePaths(self, m: int, n: int) -> int:
         
-        dp = [False] * len(s)
-        wordIndices = []
-        
-        
-        for i in range(len(s)-1, -1, -1):
+        def factorial(num:int) -> int:
             
-            if s[i:] in wordDict:
-                dp[i] = True
-                wordIndices.append(i)
-            else:
-                for j in wordIndices:
-                    if s[i:j] in wordDict:
-                        dp[i] = True
-                        wordIndices.append(i)
-                        break
-        
-        
-        return dp[0]
-                    
+            if num < 1:
+                return 1
             
-        
-                    
-            
-        
+            return num * factorial(num-1)
+       
+    
+    
+        return factorial(m+n-2)//factorial(m-1)//factorial(n-1)
