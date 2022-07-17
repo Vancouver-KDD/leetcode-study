@@ -1,28 +1,38 @@
-# O(n*n*m) Solution Time Limit
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    def numDecodings(self, s: str) -> int:
         
-        dp = [False] * len(s)
-        wordIndices = []
+        dp = [0 for i in range(len(s)+2)]
+        
+        n = len(s)
+        dp[n] = 1
+        if s[n-1] != '0':
+            dp[n-1] = 1
         
         
-        for i in range(len(s)-1, -1, -1):
+        for i in range(len(s)-2, -1,-1):
             
-            if s[i:] in wordDict:
-                dp[i] = True
-                wordIndices.append(i)
+            if s[i] == '0':
+                dp[i] = 0
+            
+            elif s[i] == '1':
+                if s[i+1] == '0':
+                    dp[i] = dp[i+2]
+                else:
+                    dp[i] = dp[i+1] + dp[i+2]
+            
+            elif s[i] == '2':
+                if s[i+1] == '0':
+                    dp[i] = dp[i+2]
+                elif s[i+1] == '7' or s[i+1] == '8' or s[i+1] == '9':
+                    dp[i] = dp[i+1]
+                else:
+                    dp[i] = dp[i+1] + dp[i+2]
             else:
-                for j in wordIndices:
-                    if s[i:j] in wordDict:
-                        dp[i] = True
-                        wordIndices.append(i)
-                        break
-        
+                if s[i+1] == '0':
+                    return 0
+                
+                dp[i] = dp[i+1]
+                
         
         return dp[0]
-                    
-            
-        
-                    
-            
         
