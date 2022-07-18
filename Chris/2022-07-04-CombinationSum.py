@@ -1,28 +1,24 @@
-# O(n*n*m) Solution Time Limit
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         
-        dp = [False] * len(s)
-        wordIndices = []
+        res = []
         
         
-        for i in range(len(s)-1, -1, -1):
+        def dfs(i, cur, total):
+            if total == target:
+                res.append(cur.copy())
+                return
             
-            if s[i:] in wordDict:
-                dp[i] = True
-                wordIndices.append(i)
-            else:
-                for j in wordIndices:
-                    if s[i:j] in wordDict:
-                        dp[i] = True
-                        wordIndices.append(i)
-                        break
-        
-        
-        return dp[0]
-                    
+            if total > target or i >= len(candidates):
+                return
             
-        
-                    
             
+            cur.append(candidates[i])
+            dfs(i, cur, total + candidates[i])
+            cur.pop()
+            dfs(i+1, cur, total)
         
+        dfs(0,[],0)
+        
+        return res
+                

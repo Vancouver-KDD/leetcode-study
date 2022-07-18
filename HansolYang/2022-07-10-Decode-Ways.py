@@ -18,3 +18,7 @@ class Solution:
                 cur += sec
             fir, sec = cur, fir
         return fir
+
+
+#checking the length of the given data
+#sometimes it's better to start from the end in Dynamic Programming
