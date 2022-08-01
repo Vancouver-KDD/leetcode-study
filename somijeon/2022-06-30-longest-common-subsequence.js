@@ -28,7 +28,7 @@ var longestCommonSubsequence = function (text1, text2) {
 
   for (let i = 1; i <= m; i++) {
     for (let j = 1; j <= n; j++) {
-      // two  possible scenarioes: the current char of text1 and text2 match/ does not match
+      // two  possible scenarioes: the current char of text1 and text2 match/does not match
 
       if (text1.charAt(i - 1) != text2.charAt(j - 1)) {
         dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
