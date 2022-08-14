@@ -8,5 +8,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <ctype.h>
 
 #endif LEETCODE_STUDY_COMMON_H
