@@ -1,26 +1,28 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def isValid(self, s: str) -> bool:
         
-        wordDict = {}
+        openings = "([{"
+        
+        brackets = {}
+        brackets[")"] = "("
+        brackets["}"] = "{"
+        brackets["]"] = "["
+        
+        stack = []
         
         
-        for word in strs:
-            sortedWord = ''.join(sorted(word))
-            
-            if sortedWord not in wordDict:
-                wordDict[sortedWord] = [word]
+        for b in s:
+            if b in openings:
+                stack.append(b)
+                
             else:
-                wordDict[sortedWord].append(word)
-
+                # closing
+                if len(stack) == 0 or b not in brackets or brackets[b] != stack.pop(): 
+                    return False
+                
         
+        return len(stack) == 0
+                
         
-        return wordDict.values()
-        
-            
-            
-            
-            
-    
-    
         
         
