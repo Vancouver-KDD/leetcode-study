@@ -1,26 +1,7 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
         
-        wordDict = {}
+        if root == None:
+            return 0
         
-        
-        for word in strs:
-            sortedWord = ''.join(sorted(word))
-            
-            if sortedWord not in wordDict:
-                wordDict[sortedWord] = [word]
-            else:
-                wordDict[sortedWord].append(word)
-
-        
-        
-        return wordDict.values()
-        
-            
-            
-            
-            
-    
-    
-        
-        
+        return max(self.maxDepth(root.left),self.maxDepth(root.right)) + 1
