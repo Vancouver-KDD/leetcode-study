@@ -1,8 +1,6 @@
 
 # leetcode-study
 
-*Read this in other languages*: [English](README.md), [한국어](README_ko.md) 
-
 이곳은 Technical interview준비를 위해 Blind 75 easy&medium 문제를 함께 공부하는 그룹입니다. 
 
 ## 📝 목표
