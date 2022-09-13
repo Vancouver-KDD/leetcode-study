@@ -24,7 +24,7 @@
 // -109 <= target <= 109
 // Only one valid answer exists.
 
-const twoSum = (nums, target) => {
+var twoSum = (nums, target) => {
 
     // from the first element, check if the other numbers to be added to become target
     for (let i = 0; i < nums.length; i++) {
@@ -35,3 +35,24 @@ const twoSum = (nums, target) => {
         }
     }
 }
+
+// time complexity O(n^2)
+
+// HashMap { value : index }
+// visit first elemnt which is 2, check if (target - 2) exist
+// if not, add it to HashMap { 2: 0 } and go to the second element
+// find the second : Time O(n) Memo O(n)
+
+var twoSum = function(nums, target) {
+    let map = {};
+
+     for (let i = 0; i < nums.length; i++) {
+         let diff = target - nums[i]
+
+         // check if it is not undefined, when index 0, it can be falsy value
+         if(map[diff] !== undefined) {
+             return [map[diff], i]
+         }
+         map[nums[i]] = i;
+     }
+};
