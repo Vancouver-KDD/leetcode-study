@@ -53,13 +53,17 @@ var twoSum = function (nums, target) {
 var twoSum = function (nums, target) {
   let map = {};
 
+  // loop through given array
   for (let i = 0; i < nums.length; i++) {
+    // get diff value
     const diff = target - nums[i];
 
+    // check if map has diff value
     if (map.hasOwnProperty(diff)) {
       return [map[diff], i];
     }
 
+    // set value as a key and idx as a val
     map[nums[i]] = i;
   }
 };
