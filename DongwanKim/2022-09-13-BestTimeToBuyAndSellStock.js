@@ -43,6 +43,7 @@ var maxProfit = function (prices) {
       // since we only want to buy at lowest price
       left = right;
     }
+    // move right pointer to next day to check if its profitable
     right++;
   }
   return profit;
