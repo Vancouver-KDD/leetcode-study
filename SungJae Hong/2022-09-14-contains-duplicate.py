@@ -17,3 +17,7 @@ class Solution2:
             if n in hashmap:
                 return True
             hashmap.add(n)
+
+class Solution3:
+    def containsDuplicate(selfself, nums: List[int]) -> bool:
+        return len(nums) != len(set(nums))
