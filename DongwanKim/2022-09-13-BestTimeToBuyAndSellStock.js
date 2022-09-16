@@ -47,4 +47,5 @@ var maxProfit = function (prices) {
     right++;
   }
   return profit;
+  //test
 };
