@@ -3,13 +3,13 @@ class Solution:
         if t == "":
             return ""
 
-        countT, window = {}, {}
-        for c in t:
-            countT[c] = 1 + countT.get(c, 0)
+        window = {}
+        countT = collections.Counter(t)
 
         have, need = 0, len(countT)
-        res, resLen = [-1, -1], float("infinity")
+        res, resLen = [-1, -1], len(s)+1
         l = 0
+        
         for r in range(len(s)):
             c = s[r]
             window[c] = 1 + window.get(c, 0)
@@ -28,4 +28,10 @@ class Solution:
                     have -= 1
                 l += 1
         l, r = res
-        return s[l : r + 1] if resLen != float("infinity") else ""
+        return s[l : r + 1] if resLen != len(s)+1 else ""
+
+# 1. find any match
+# 2. move right pointer to find the next value of left pointer
+# 3. if a char that is not the left pointer value in t is found while moving the right pointer, decrease t dict value
+# 4. if the left pointer value is found, pop left until a char in t is found. If the value of the char in the t_dict is negative, keep poping
+# 5. repeat until right pointer reach to the end
