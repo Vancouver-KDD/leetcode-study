@@ -10,7 +10,7 @@ public class ProductofArrayExceptSelf {
 		}
 
 	}
-	
+ 	
     public int[] productExceptSelf(int[] nums) {
 		int[] answers = new int[nums.length];
 
