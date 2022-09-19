@@ -1,26 +1,21 @@
 class Solution:
-    def rotate(self, matrix: List[List[int]]) -> None:
-        """
-        Do not return anything, modify matrix in-place instead.
-        """
-        
-        t = l =0
-        b = r = len(matrix) - 1
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
         
         
-        while l < r:
+        count={}
+        
+        for i in range(len(t)):
             
-            for i in range(r-l):
-                temp = matrix[t][l+i]
-                matrix[t][l+i] = matrix[b-i][l]
-                matrix[b-i][l] = matrix[b][r-i]
-                matrix[b][r-i] = matrix[t+i][r] 
-                matrix[t+i][r] = temp
-
-            l += 1
-            r -= 1
-            t += 1
-            b -= 1
-                
+            count[s[i]] = count.get(s[i],0) + 1
+            count[t[i]] = count.get(t[i],0) -1
         
-        return matrix
+        for val in count.values():
+            if val != 0:
+                return False
+        
+        return True
+        
+        
+        
