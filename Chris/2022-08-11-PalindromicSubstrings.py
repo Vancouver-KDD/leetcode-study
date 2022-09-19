@@ -1,26 +1,20 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def countSubstrings(self, s: str) -> int:
         
-        wordDict = {}
+        count = 0
         
-        
-        for word in strs:
-            sortedWord = ''.join(sorted(word))
+        for i in range(len(s)):
             
-            if sortedWord not in wordDict:
-                wordDict[sortedWord] = [word]
-            else:
-                wordDict[sortedWord].append(word)
-
+            l,r = i , i
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                l -= 1
+                r += 1
+                count += 1
+                
+            l,r = i , i+1
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                l -= 1
+                r += 1
+                count += 1
         
-        
-        return wordDict.values()
-        
-            
-            
-            
-            
-    
-    
-        
-        
+        return count
