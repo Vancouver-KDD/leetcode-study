@@ -35,8 +35,8 @@ let maxSubArray = (nums) => {
 
   for (let i = 1; i < nums.length; i++) {
     let calc = Math.max(nums[i], accNum + nums[i])
-    if(calc >maxValue ) {
-        maxValue = calc
+    if (calc > maxValue) {
+      maxValue = calc
     }
     accNum = calc
   }
@@ -45,16 +45,23 @@ let maxSubArray = (nums) => {
 }
 
 
-// let maxSubArray = function (nums) {
-//   let maxSum = nums[0];
-//
-//   for (let a = 1; a < nums.length; a++) {
-//     nums[a] = Math.max(nums[a], nums[a] + nums[a - 1])
-//     maxSum = Math.max(nums[a], maxSum)
-//   }
-//   return maxSum
-// };
+const maxSubArray = (nums) => {
+  let maxSub = nums[0]
+  let curSum = 0
+
+  for (let n of nums) {
+    if (curSum < 0) {
+      curSum = 0
+    }
+    curSum += n
+    maxSub = Math.max(maxSub, curSum)
+  }
+  return maxSub
+
+}
 
 
-console.log(answerSub([-2,-1]))
+
+
+console.log(maxSubArray([-2, -1]))
 
