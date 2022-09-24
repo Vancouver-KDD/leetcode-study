@@ -36,6 +36,7 @@ const findMin = function (nums) {
       return midVal
     }
 
+    // 이게 없으면 leetcode 테스트 시간 초과가 뜸
     if (midVal > leftVal) {
       left = mid + 1
     } else {
