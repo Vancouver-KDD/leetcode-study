@@ -22,10 +22,8 @@ class Solution {
                     while(start < nums.length && nums[start] == nums[start-1]) start++;
                 } else if(sum > 0) {
                     end--;
-                    while(end > 0 && nums[end] == nums[end+1]) end--;
                 } else if(sum < 0) {
                     start++;
-                    while(start < nums.length && nums[start] == nums[start-1]) start++;
                 }
             }
         }
