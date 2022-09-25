@@ -8,24 +8,24 @@ public class MaximumProductSubarray {
 
 	
     public int maxProduct(int[] nums) {
-        int result = nums[0];
-        int imax = result;
-        int imin = result;
+        int maxProduct = nums[0];
+        int max = maxProduct;
+        int min = maxProduct;
 
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] < 0) {
-            	int temp = imax;
-            	imax = imin;
-            	imin = temp;
+            	int temp = maxProduct;
+            	max = min;
+            	min = temp;
             }
 
-            imax = Math.max(nums[i], nums[i] * imax);
-            imin = Math.min(nums[i], nums[i] * imin);
+            max = Math.max(nums[i], nums[i] * max);
+            min = Math.min(nums[i], nums[i] * min);
 
-            result = Math.max(result, imax);
+            maxProduct = Math.max(maxProduct, max);
         }
 
-        return result;
+        return maxProduct;
     }
 
 }
