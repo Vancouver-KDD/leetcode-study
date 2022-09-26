@@ -1,6 +1,3 @@
-from curses.ascii import SO
-
-
 class Solution:
     def longestCommonSubsequence(text1: str, text2: str) -> int:
         dp = [[0]*(len(text2)+1)]*(len(text1)+1)
