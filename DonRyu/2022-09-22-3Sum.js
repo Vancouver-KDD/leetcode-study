@@ -1,3 +1,5 @@
+//2022-09-24 모르겠다.봐도 이해가 잘 안간다.
+
 var threeSum = function(array) {
      array.sort((a,b) => a - b);
     const triplets = [];
