@@ -1,5 +1,5 @@
 public class SumOfTwoIntegers {
-
+ 
 	public int getSum(int a, int b) {
 		int temp;
 		while(b !=0) {

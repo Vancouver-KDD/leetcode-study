@@ -1,5 +1,5 @@
 public class NumbeOf1Bits {
-	
+	 
 //    public int hammingWeight(int n) {
 //    	System.out.println(Integer.toBinaryString(-3));
 //    	String temp = Integer.toBinaryString(n);
