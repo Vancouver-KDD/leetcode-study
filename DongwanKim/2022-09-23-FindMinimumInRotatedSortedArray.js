@@ -54,7 +54,7 @@ var findMin = function(nums) {
         min = Math.min(min, nums[mid])
         
         // if left is small 
-        if(nums[mid] >= nums[left]){
+        if(nums[left] <= nums[mid]){
             left = mid + 1;
         } else {
             right = mid - 1;
