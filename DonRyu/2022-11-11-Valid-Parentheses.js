@@ -1,3 +1,7 @@
+
+
+
+
 const isValid = (s) => {
   if (s.length % 2 !== 0) return false;
 
@@ -8,12 +12,15 @@ const isValid = (s) => {
     ['{', '}']
   ]);
 
-  for (let i = 0 ; i < s.length ; i += 1) {
+  for (let i = 0 ; i < s.length; i += 1) {
     if (map.has(s[i])) {
       stack.push(map.get(s[i]));
     } else if (s[i] !== stack.pop()) {
       return false;
     }
   }
+
   return stack.length === 0;
 };
+
+isValid('(){}[]')
