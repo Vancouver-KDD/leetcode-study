@@ -14,6 +14,7 @@ class Solution{
             int left = i-1;
             int right = i+1;
             int currSize1 = 0;
+			//check odd case
             while(left >= 0 && right <= s.length()-1 && s.charAt(left)== s.charAt(right)){
                 left--;
                 right++;
@@ -26,6 +27,7 @@ class Solution{
             int currSize2 = 0;
             left = i;
             right = i+1;
+			//check even case
             while(left >= 0 && right <= s.length()-1 && s.charAt(left) == s.charAt(right)){
                 left--;
                 right++;
