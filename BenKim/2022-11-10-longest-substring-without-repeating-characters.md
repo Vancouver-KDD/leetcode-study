@@ -26,3 +26,21 @@ class Solution:
 
         return result
 ```
+## while, defaultdict 사용
+```py
+import collections
+
+def len_of_the_longest_substring_wo_repeating_chars(s: str) -> int:
+    hm = collections.defaultdict(int)
+    l = 0
+    r = 0
+    ret = 0
+    while r < len(s):
+        hm[s[r]] += 1
+        while hm[s[r]] > 1:
+            hm[s[l]] -= 1
+            l += 1
+        ret = max(ret, r - l + 1)
+        r += 1
+    return ret
+```
