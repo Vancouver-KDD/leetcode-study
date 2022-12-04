@@ -41,7 +41,6 @@ let maxSubArray = (nums) => {
     accNum = calc
   }
   return maxValue
-
 }
 
 

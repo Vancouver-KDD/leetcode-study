@@ -27,7 +27,7 @@ var productExceptSelf = function (nums) {
   return outPut
 };
 
-[0,0]
+[0, 0]
 
 // a b c d
 // 1   a  ab  abc
@@ -48,10 +48,10 @@ var productExceptSelf2 = function (nums) {
 
   for (let preIndex = 0; preIndex < nums.length; preIndex++) {
     output.push(prefix);
-    prefix*=nums[preIndex];
+    prefix *= nums[preIndex];
   }
 
-  for (let index = nums.length-1; index >= 0; index--) {
+  for (let index = nums.length - 1; index >= 0; index--) {
 
     output[index] *= postfix
     postfix *= nums[index]
@@ -61,4 +61,62 @@ var productExceptSelf2 = function (nums) {
 };
 
 
-console.log(productExceptSelf2([1,2,3,4]))
+var findMedianSortedArrays = function (nums1, nums2) {
+
+  let combinedArr = [...nums1, ...nums2]
+
+  function compare(a, b) {
+    return a - b
+  }
+
+  combinedArr.sort(compare)
+  if (combinedArr.length % 2 !== 0) {
+    return combinedArr[Math.floor(combinedArr.length / 2)]
+  } else {
+    let index = (combinedArr.length - 1) / 2
+    return (combinedArr[Math.ceil(index)] + combinedArr[Math.floor(index)]) / 2
+  }
+
+};
+
+// console.log(findMedianSortedArrays([3], [-1,-2]))
+
+
+class Car {
+
+  constructor(tire, engine, brand) {
+    this.tire = tire
+    this.engine = engine
+    this.brand = brand
+  }
+
+  brandName() {
+    return 'Car brand is ' + this.brand
+  }
+}
+
+class Tesla extends Car {
+  constructor(test) {
+    super(1,2,'brand');
+    this.test =  test
+  }
+
+  price() {
+    return 'this is the price' + this.brand + this.test
+  }
+}
+
+
+let car = new Car(4, 'V8', 'Tesla')
+let modelX = new Tesla(9999)
+
+
+// console.log(car.brandName())
+// console.log(modelX.price())
+
+
+let map = new Map()
+
+map.set('key','value')
+console.log(map.get('key'))
+console.log(map.has('12'))

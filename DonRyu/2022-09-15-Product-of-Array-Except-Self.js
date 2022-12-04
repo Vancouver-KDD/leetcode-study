@@ -17,3 +17,9 @@ var productExceptSelf = function(nums) {
     }
     return output
 };
+
+
+
+
+
+console.log(Array(9).fill(1))

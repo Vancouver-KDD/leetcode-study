@@ -19,7 +19,6 @@ const search = (nums, target) => {
   while (left <= right) {
     let mid = Math.floor(left + (right - left) / 2)
     if (nums[mid] === target) return mid;
-
     if (nums[left] <= nums[mid]) {
       if (nums[left] <= target && target < nums[mid]) {
         right = mid - 1;
