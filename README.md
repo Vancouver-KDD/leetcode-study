@@ -13,7 +13,7 @@
 ## ❓ 방법 
 > 🖋 셀프 스터디
 
-> Easy & Medium Group
+# Easy & Medium Group
 - 월-금에 거쳐 1일 1문제(총 5문제 풀기)
 - 문제는 Blind 75 easy & medium (https://neetcode.io/practice)
 - 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
