@@ -1,6 +1,0 @@
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        for word in wordDict:
-            if word not in s:
-                return False
-        return True
