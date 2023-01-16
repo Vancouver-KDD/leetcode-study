@@ -24,8 +24,9 @@
 // space complexity: O(1) - constant -> O(N)
 
 var twoSum = function(nums, target) {
-    for(int i=0; i<nums.length; i++){
-        for(int j=i+1; j<nums.length; j++){
+
+    for(var i=0; i<nums.length; i++){
+        for(var j=i+1; j<nums.length; j++){
             if(nums[i]+nums[j] === target) {
                 return [i,j];
             }

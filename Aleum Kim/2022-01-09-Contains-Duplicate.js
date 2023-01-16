@@ -17,15 +17,28 @@
 // 1 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
-function containsDuplicate(nums) {
-    //sort out input array(O NlogN)
-    //[1, 1, 2, 3]
+var containsDuplicate = function(nums) {
+    nums = nums.sort()
 
-    nums.sort((a,b)=>{return b-a});
-    for(let i = 0; i < nums.length; i++) {
-        if(i>0 && nums[i-1] === nums[i]) return true
+    for(let i = 0; i<nums.length; i++) {
+        if(nums[i] == nums[i+1]) 
+        return true
     }
+    return false
 };
 
+
+var containsDuplicate = function(nums) {
+    
+    let hTable = {};
+    for(let i=0; i< nums.length; i++) {
+        if(nums[i] in hTable) 
+            return true;
+            hTable[nums[i]] = 1;
+        
+    }
+    return false;
+
+};
 
 
