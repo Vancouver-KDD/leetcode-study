@@ -1,51 +1,57 @@
+
 # leetcode-study
 
-*Read this in other languages*: [English](README.md), [한국어](README_ko.md)
+이곳은 Technical interview준비를 위해 Algo&DS 문제를 함께 공부하는 그룹입니다. 
 
-This is a Blind75-easy&medium-challenge that will prepare you for a technical interview.
+## 📝 목표
+- Technical interview에 자신감 얻기
+- 스터디를 통해 알고리즘/자료구조 문제해결 능력 기르기
 
-## 📝 Goal 
+## 🗓 기간
+2023.01.15(일) - 2023.04.09(일) 오후 8시
 
-- Being a master of Blind 75 easy&medium questions 
-- Being prepared for a technical interview
-- Improvement of problem-solving skills through steady and regular practice
-- Getting various types of algorithm/data structure knowledge and perspectives from others
+## ❓ 방법 
+> 🖋 셀프 스터디
 
-## 🗓 Period 
-2022.06.05(Sun) - 2022.08.21(Sun) (OT in the first week)
+#### Easy & Medium Group
+- 월-금에 거쳐 1일 1문제(총 5문제 풀기)
+- 문제는 Blind 75 easy & medium (https://neetcode.io/practice)
+- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
 
-## ❓ How to 
-> 🖋 Self study
-- Work on one problem a day from Monday to Friday: five problems per week
-- Problems are from Blind 75 easy & medium (https://neetcode.io/)
-- Make a **pull request** of a solution by **every Friday** (Any programming language)
-- Write down a short note about the **solution** by **every Friday** (Example: https://docs.google.com/spreadsheets/d/1K7IwM8SNn7A05kGSOwwXsulr19qobZxCMy7x8lEX904/edit#gid=0)
+#### Medium & Hard Group
+- 월-금에 거쳐 1일 2문제(총 10문제 풀기)
+- 문제는 Neetcode 150 medium & hard (https://neetcode.io/practice)
+- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
 
-> 🔖 Mock interview
-- Online mock interview **every Sunday at 8-10pm**
-- Three-in-one group mock interview: One interviewer and two interviewees. 
-- Interviewer prepares two questions; one problem from the five problems of the week and the other from problems that the group has studied.  
+> 🔖 모의 인터뷰
+- 온라인 모의 인터뷰 매주 일요일 저녁 8시
+- 2인 1조 페어링
+- 인터뷰어/인터뷰이 돌아가며 각 1문제씩 진행
+- 인터뷰어는 출제하는 문제의 다양한 솔루션을 숙지해야 하며 Follow-up Question도 준비
+- 문제는 그동안 풀었던 문제에서 랜덤 1개 선택
+
 
 ## 💾 Rule of PR 
-- Subject: 
+- 제목: 
   ~~~
   [Name] subject
   ~~~
   (e.g. [Jonghyeok Kim] Best Time to Buy and Sell Stock)
 
-- File Name: 
+- 파일이름: 
   ~~~
   yyyy-MM-dd-problem-name.py
   ~~~
   (e.g. 2022-05-24-Best-Time-to-Buy-and-Sell-Stock.py)
 
-- Please add your reviewer to the PR
 
 ## 💰 Deposit 
-- $30 will be submitted to the group leader
-- $5 will be deducted if you don’t post a solution
-- $5 will be deducted if you don’t post a note
-- $5 will be deducted if you don't participate in a mock interview
-- If the balance is all used, you cannot join the next study
-- The money gathered will be used for snacks or coffee at the last meeting
-- All remaining will be returned
+- 30불의 디파짓이 있습니다
+- 제출한 디파짓은 Challenge 완료에만 돌려드리며 사유 불문 중도 포기하시면 돌려드리지 않습니다
+- PR을 제출하지 않을 경우 5불이 디파짓에서 차감됩니다
+- 일요일 인터뷰 사유 불문 불참시 10불이 디파짓에서 차감됩니다
+- 일요일 인터뷰 지각시 5불이 디파짓에서 차감됩니다
+- 디파짓 소진시 Challenge에서 제외됩니다
+- 벌금은 스터디 운영비에 사용됩니다 (오프라인 모임)
+- 오프라인 모임이 어려울 경우 KDD 운영비로 사용됩니다
+- 남은 디파짓은 돌려드립니다
