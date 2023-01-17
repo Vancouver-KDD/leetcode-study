@@ -55,25 +55,6 @@ class Solution {
     }
 }
 
-
-class Solution {
-    public boolean containsDuplicate(int[] nums) {
-        Set<Integer> set = new HashSet<>();
-        // traverse each element in the array
-        for(int i = 0; i < nums.length; i++) {
-            // check if the size of hashset is smaller than the size of array
-            // that means every elements in the hashset is unique yet
-            if (set.size() < nums.length) {
-                set.add(nums[i]);
-            } else {
-                return true;
-            }
-        }
-        // otherwise false
-        return false;
-    }
-}
-
 // 4. using the size of hashset and the length of array
 // The size of a HashSet is the number of unique elements it contains
 // time complexity is O(N) as we iterate each element performing constant time operation (set.add(num))
