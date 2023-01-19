@@ -32,3 +32,8 @@ var productExceptSelf = function(nums) {
     
     return rightarr;
 };
+
+
+//Array
+//Time Complexity : O(n) => for loop
+//Space Complexity : O(n) => array
