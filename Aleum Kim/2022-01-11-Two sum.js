@@ -33,3 +33,17 @@ var twoSum = function(nums, target) {
         }
     }
 };
+//[1,2,3,6,11] 5
+//{4:0, 3:1}
+
+function twoSum (nums, target){
+
+    let memory = {};
+    for(let i=0; i< nums.length; i++){
+        if(memory[nums[i]] === undefined){
+            memory[target-nums[i]] = i
+        }else {
+            return [i,memory[nums[i]]]
+        }
+    }
+}
