@@ -20,3 +20,23 @@ var isAnagram = function(s,t) {
 function sorter(str){
     return str.split('').sort().join('')
 }
+
+
+
+var isAnagram = function (s, t) {
+    if(s.length === t.length) {
+        let sArray = s.split('');
+        let tArray = t.split('');
+        
+        sArray.sort().join('');
+        tArray.sort().join('');
+        for(let i=0; i<s.length; i++){
+            if(sArray[i] !== tArray[i]) {
+                return false;
+            }
+        }
+        return true;
+    } else {
+        return false;
+    }
+   };

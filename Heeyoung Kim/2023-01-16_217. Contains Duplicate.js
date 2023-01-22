@@ -1,3 +1,5 @@
+
+
 // Contains Duplicate
 // Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
@@ -17,28 +19,19 @@
 // 1 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 
-var containsDuplicate = function(nums) {
-    nums = nums.sort()
-
-    for(let i = 0; i<nums.length; i++) {
-        if(nums[i] == nums[i+1]) 
-        return true
-    }
-    return false
-};
-
 
 var containsDuplicate = function(nums) {
-    
-    let hTable = {};
-    for(let i=0; i< nums.length; i++) {
-        if(nums[i] in hTable) 
-            return true;
-            hTable[nums[i]] = 1;
-        
+    let map = {};
+
+    for(let i=0; i<nums.length; i++) {
+        map[nums[i]] = map[nums[i]] ? map[nums[i]] + 1 : 1;
+        if(map[nums[i]] >= 2) return true;
     }
+
     return false;
-
+   
 };
 
 
+// Time Complexity : O(n) Only one traversals are needed, so the time complexity is O(n)
+// Space Complexity : O(1) No extra space is needed

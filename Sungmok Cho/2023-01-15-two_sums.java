@@ -19,31 +19,25 @@
 
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
+ 
 
-// time complexity: Object(N^2) -> O(N)
-// space complexity: O(1) - constant -> O(N)
+// Constraints:
 
-var twoSum = function(nums, target) {
+// 2 <= nums.length <= 104
+// -109 <= nums[i] <= 109
+// -109 <= target <= 109
+// Only one valid answer exists.
 
-    for(var i=0; i<nums.length; i++){
-        for(var j=i+1; j<nums.length; j++){
-            if(nums[i]+nums[j] === target) {
-                return [i,j];
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+       
+        for(int i = 0; i<nums.length; i++) {
+            for ( int j=1; j < nums.length; j++) {
+                if((nums[i]+nums[j]) == target) {
+                    return new int [] {i,j};
+                }
             }
         }
-    }
-};
-//[1,2,3,6,11] 5
-//{4:0, 3:1}
-
-function twoSum (nums, target){
-
-    let memory = {};
-    for(let i=0; i< nums.length; i++){
-        if(memory[nums[i]] === undefined){
-            memory[target-nums[i]] = i
-        }else {
-            return [i,memory[nums[i]]]
-        }
+        return new int [] {};
     }
 }
