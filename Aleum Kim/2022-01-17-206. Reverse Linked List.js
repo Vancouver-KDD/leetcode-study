@@ -1,15 +1,16 @@
-// Given the head of a singly linked list, reverse the list, and return the reversed list.
-// Input: head = [1,2,3,4,5]
-// Output: [5,4,3,2,1]
 
-var reverseList = function(head) {
-   let cur = head;
-   let prev = null;
-   while(cur) {
-    let holdNext = cur.next;
-    cur.next = prev;
-    prev = cur;
-    cur = holdNext;
+
+const mergesortedArrays = (arr1 = [] , arr2 = []) => {
+   let result = []
+
+   while(arr1.length && arr2.length) {
+      const next = (arr1[0] < arr2[0] ) ? arr1.shift() : arr2.shift();
+      result.push(next)
    }
-   return prev;
+
+   if(arr1.length) {
+      result = result.concat(arr1)
+   } else if(arr2.length) {
+      result = result.concat(arr2)
+   }
 }
