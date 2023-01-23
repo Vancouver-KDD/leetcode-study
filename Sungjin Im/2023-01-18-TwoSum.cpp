@@ -1,4 +1,6 @@
 // TwoSum.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// :author: SJ
+// :date: Jan 17 2023
 //
 // Given an array of integers nums and an integer target,
 // return indices of the two numbers such that they add up to target.
