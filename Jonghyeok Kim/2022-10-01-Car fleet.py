@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
         tuple_list = [(position[i],speed[i]) for i in range(len(position))]
