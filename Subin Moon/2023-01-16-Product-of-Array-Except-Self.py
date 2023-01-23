@@ -12,8 +12,8 @@
 
 class Solution:
     # Solution 1 - Space-Optimized Prefix & Suffix Products in One-pass
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
-        result = [1 for _ in range(len(numbs))]
+    def productExceptSelf(self, nums: list[int]) -> list[int]:
+        result = [1 for _ in range(len(nums))]
         pre = 1
         post = 1
 
@@ -24,7 +24,6 @@ class Solution:
             post = post * nums[- i - 1]
 
         return result
-
 
     # Solution 2 - Space-Optimized Prefix & Suffix Products
     def productExceptSelf_sol2(self, nums: list[int]) -> list[int]:
