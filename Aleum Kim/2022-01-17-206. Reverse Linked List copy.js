@@ -12,5 +12,5 @@ const mergesortedArrays = (arr1 = [] , arr2 = []) => {
       result = result.concat(arr1)
    } else if(arr2.length) {
       result = result.concat(arr2)
-   }
+   }t
 }

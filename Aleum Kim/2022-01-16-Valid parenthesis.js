@@ -16,7 +16,9 @@ let heap = [];
 
 for(let char of s){
 if(bracket[char]) {
+ 
   heap.push(bracket[char])
+  debugger;
 } else{
  if(heap.pop() !== char) return false
 }
