@@ -15,6 +15,8 @@
 // 마지막 인덱스에 있는 요소를 빼고 계산할 수 있음
 // 고정적인 범위를 탐색할 때 유용하며 중복으로 연산을 제거하면서 효율성을 높일수 있음
 
+// 1. using window sliding approach
+// The time complexity of this code is O(n), where n is the length of the input string s.
 public static int characterReplacement(String s, int k) {
 		// integer k 에 따라서
 		// replacement 될 수 있는 알파벳 개수 결정되고
@@ -32,12 +34,14 @@ public static int characterReplacement(String s, int k) {
 		// When K is bigger than 0, we will keep adding alphabets onto the window
 		// if not, we will start popping things off from the window 
 		for (int window_end = 0; window_end < N; window_end++) {
-			// subtract upper case A that will give you the correct index
+			// substract upper case A that will give you the correct index
 			char_counts[s.charAt(window_end) - 'A']++;
 			int current_char_count = char_counts[s.charAt(window_end) - 'A'];
 			max_count = Math.max(max_count, current_char_count);
 
 			// means that we do not have operations (out of operations)
+			// including the array accesses, increment and decrement operations, and the max function
+			// all have a constant time complexity of O(1). 
 			while (window_end - window_start - max_count + 1 > k) {
 				char_counts[s.charAt(window_start) - 'A']--;
 				window_start++;
@@ -49,3 +53,27 @@ public static int characterReplacement(String s, int k) {
 		return max_length;
 
 	}
+
+// 2. using window sliding approach; uses two pointers, start and end
+// and an array to store the count of characters in the window.
+// time complexity is O(N)  where n is the length of the input string s, 
+// as we are iterating through the string once.
+// The space complexity is O(1) as we are using a fixed size array of size 26 to store the count of characters.
+
+public static int characterReplacement(String s, int k) {
+    if (s == null || s.length() == 0) {
+        return 0;
+    }
+    int[] count = new int[26];
+    int maxCount = 0;
+    int maxLength = 0;
+    int left = 0;
+    for (int right = 0; right < s.length(); right++) {
+        maxCount = Math.max(maxCount, ++count[s.charAt(right) - 'A']);
+        if (right - left + 1 - maxCount > k) {
+            count[s.charAt(left++) - 'A']--;
+        }
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+    return maxLength;
+}
