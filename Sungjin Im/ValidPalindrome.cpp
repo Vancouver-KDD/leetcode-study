@@ -34,9 +34,9 @@ using namespace std;
 int main()
 {
 	string s = { "A man, a plan, a canal: Panama" };
-//	string s = { "race a car" };
-//	string s = { "" };
-	
+	//	string s = { "race a car" };
+	//	string s = { "" };
+
 	string converted_s = "";
 	string reversed_s = "";
 
@@ -54,7 +54,7 @@ int main()
 		// ASCII numbers: 48~57
 		// ASCII lowercase: 97-122
 		if (int(*it) >= 48 && int(*it) <= 57 ||
-			int(*it) >= 97 && int(*it) <= 122 ) {
+			int(*it) >= 97 && int(*it) <= 122) {
 			converted_s.push_back(*it);
 		}
 	}
@@ -77,7 +77,7 @@ int main()
 	else {
 		cout << "false";
 	}
-											
+
 	cout << "\n\n";
 
 	return 0;

@@ -67,28 +67,28 @@ int main()
 
     switch (ex_num)
     {
-        case 1:
-            s = "anagram";
-            t = "nagaram";
-            break;
+    case 1:
+        s = "anagram";
+        t = "nagaram";
+        break;
 
-        case 2:
-            s = "rat";
-            t = "cat";
-            break;
+    case 2:
+        s = "rat";
+        t = "cat";
+        break;
 
-        default:
-            cout << "Input the first word: ";
-            cin >> s;
-            cout << "Input the second word: ";
-            cin >> t;
-            break;
+    default:
+        cout << "Input the first word: ";
+        cin >> s;
+        cout << "Input the second word: ";
+        cin >> t;
+        break;
     }
 
     result = isAnagram(s, t);
 
-    if (result == true) {   cout << "true" << endl;     }
-    else                {   cout << "false" << endl;    }
+    if (result == true) { cout << "true" << endl; }
+    else { cout << "false" << endl; }
 
     return 0;
 }

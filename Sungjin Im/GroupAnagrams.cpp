@@ -33,8 +33,8 @@ using namespace std;
 int main()
 {
 	vector<string> strs = { "eat","tea","tan","ate","nat","bat" };
-//	vector<string> strs = { "" };
-//	vector<string> strs = { "a" };
+	//	vector<string> strs = { "" };
+	//	vector<string> strs = { "a" };
 
 	vector<pair<string, int>> paired_strs;
 
@@ -49,8 +49,8 @@ int main()
 	}
 	cout << "\n\n";
 #endif
-	
-	
+
+
 	for (int i = 0; i < paired_strs.size(); i++) {
 		sort(paired_strs[i].first.begin(), paired_strs[i].first.end());
 	}
@@ -58,7 +58,7 @@ int main()
 
 	sort(paired_strs.begin(), paired_strs.end());
 
-	
+
 #ifndef _RUN_MODE		// means if debug mode
 	for (int i = 0; i < paired_strs.size(); i++) {
 		cout << paired_strs[i].first << "\t" << paired_strs[i].second << "\n";
@@ -72,23 +72,23 @@ int main()
 	string cur_str = "";
 
 	for (int i = 0; i < paired_strs.size(); i++) {
-			if (cur_str == "") {
+		if (cur_str == "") {
+			cout << strs[paired_strs[i].second];
+			cur_str = paired_strs[i].first;
+		}
+		else {
+			if (cur_str.compare(paired_strs[i].first) == 0) {
+				cout << "\",\"";
 				cout << strs[paired_strs[i].second];
 				cur_str = paired_strs[i].first;
 			}
 			else {
-				if (cur_str.compare(paired_strs[i].first) == 0) {
-					cout << "\",\"";
-					cout << strs[paired_strs[i].second];
-					cur_str = paired_strs[i].first;
-				}
-				else {
-					cout << "\"],[\"";
-					cout << strs[paired_strs[i].second];
-					cur_str = paired_strs[i].first;
-				}
-
+				cout << "\"],[\"";
+				cout << strs[paired_strs[i].second];
+				cur_str = paired_strs[i].first;
 			}
+
+		}
 	}
 
 
@@ -96,6 +96,6 @@ int main()
 
 	cout << "\n\n";
 
-	
+
 	return 0;
 }
