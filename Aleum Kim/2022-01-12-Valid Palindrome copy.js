@@ -28,7 +28,7 @@ var isPalindrome = function(str) {
 
     for(let i of arr) {
         if(alphabet.includes(i.toLowerCase())) {
-            result.push(i.toLowerCase())
+            result.push(i.toLowerCase()) 
         }
     }
     return(result.join('') == result.reverse().join(''))
@@ -37,11 +37,11 @@ var isPalindrome = function(str) {
 var isPalindrome = function(s) {
     s = s.toLowerCase()
     let start = 0 , end = s.length - 1
-    
+      // 'A man, a plan, a canal: Panama"
     const checkIfAlphaNumeric = (inputChar) => {
         if(((inputChar >= 'a') && (inputChar <= 'z')) || ((inputChar >= '0') && (inputChar <= '9'))) return true
         return false
-    }
+    } 
     while(start<end){
     if(s[start] === s[end]) {
          start++;
