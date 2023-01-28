@@ -1,4 +1,6 @@
 // TwoSum.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// :author: SJ
+// :date: Jan 17 2023
 //
 // Given an array of integers nums and an integer target,
 // return indices of the two numbers such that they add up to target.
@@ -27,7 +29,7 @@
 
 using namespace std;
 
-void two_sum(int count, int *arr, int t_num, int *r_arr)
+void two_sum(int count, int* arr, int t_num, int* r_arr)
 {
     int sum = 0;
 
@@ -85,7 +87,7 @@ int main()
         break;
     }
 
-    
+
     int result_arr[2] = { -1, -1 };
 
     two_sum(arr_count, arr, t_num, result_arr);

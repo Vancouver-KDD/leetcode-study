@@ -1,4 +1,6 @@
 // Valid_Anagrams.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// :author: SJ
+// :date: Jan 16 2023
 // 
 // Given two strings s and t, 
 // return true if t is an anagram of s, and false otherwise.
@@ -18,6 +20,9 @@
 
 using namespace std;
 
+
+// time complexity: ??
+// space complexity: ??
 bool isAnagram(string s, string t)
 {
     if (s.length() != t.length())
@@ -55,35 +60,38 @@ bool isAnagram(string s, string t)
 
 int main()
 {
-    int ex_num = 1;
+    int ex_num = 3;
     string s = "";
     string t = "";
     bool result = false;
 
     switch (ex_num)
     {
-        case 1:
-            s = "anagram";
-            t = "nagaram";
-            break;
+    case 1:
+        s = "anagram";
+        t = "nagaram";
+        break;
 
-        case 2:
-            s = "rat";
-            t = "cat";
-            break;
+    case 2:
+        s = "rat";
+        t = "cat";
+        break;
 
-        default:
-            break;
+    default:
+        cout << "Input the first word: ";
+        cin >> s;
+        cout << "Input the second word: ";
+        cin >> t;
+        break;
     }
 
     result = isAnagram(s, t);
 
-    if (result == true) {   cout << "true" << endl;     }
-    else                {   cout << "false" << endl;    }
+    if (result == true) { cout << "true" << endl; }
+    else { cout << "false" << endl; }
 
     return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
-

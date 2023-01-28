@@ -1,4 +1,4 @@
-var inverTree = function(root)  {
+var invertTree = function(root)  {
     
     let st = [root]
     while(st.length > 0) {
