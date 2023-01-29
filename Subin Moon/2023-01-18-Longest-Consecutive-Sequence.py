@@ -48,3 +48,19 @@ class Solution:
                 longest_count = max(longest_count, current_count)
 
         return longest_count
+
+    def solution_2(self, nums):
+        set_nums = set(nums)  # {0, 3, 7, 2, 5, 8, 4, 6, 1, 11}
+        count = 1
+        res = 1
+
+        for num in nums:
+            if num - 1 not in set_nums:
+                target = num + 1
+                while target in set_nums:
+                    count += 1
+                    target += 1
+                res = max(count, res)
+                count = 1
+
+        return res
