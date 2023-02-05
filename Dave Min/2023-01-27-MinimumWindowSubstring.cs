@@ -2,6 +2,8 @@ public class Solution
 {
     public string MinWindow(string s, string t)
     {
+        if (s.Length < t.Length) return "";
+        if (s.Length == 1 && t.Length == 1 && s[0] == t[0]) return t;
         Dictionary<char, int> tMap = new Dictionary<char, int>();
         Dictionary<char, int> sMap = new Dictionary<char, int>();
         string result = null;
@@ -36,26 +38,18 @@ public class Solution
                 r++; continue;
             }
             bool res = CompareToTMap(tMap, sMap);
-            Console.WriteLine(res);
-            if (res)
+            while (res && r - t.Length >= l)
             {
+                Console.WriteLine(res);
                 string str = s.Substring(l, r - l + 1);
                 if (result == null)
                     result = str;
                 else
                     result = str.Length < result.Length ? str : result;
 
-                Console.WriteLine("res: " + result);
-                while (r - t.Length >= l)
-                {
-                    sMap[s[l]]--;
-                    l++;
-                    if (CompareToTMap(tMap, sMap))
-                    {
-                        string str1 = s.Substring(l, r - l + 1);
-                        result = str1.Length < result.Length ? str : result;
-                    }
-                }
+                sMap[s[l]]--;
+                l++;
+                res = CompareToTMap(tMap, sMap);
             }
             r++;
         }
