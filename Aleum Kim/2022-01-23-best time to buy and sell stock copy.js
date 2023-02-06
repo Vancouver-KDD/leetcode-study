@@ -17,3 +17,5 @@ function maxProfit(prices) {
         }
     }
 }
+
+// Time O(N) | Space O(1)
