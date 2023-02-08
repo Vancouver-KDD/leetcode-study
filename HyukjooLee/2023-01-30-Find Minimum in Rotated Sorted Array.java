@@ -7,8 +7,18 @@
 // rotated sorted array.. some elements moved to the end of the array
 // while, some elements moved to the beginning of the array
 // so sorted array is not longer exists
+// to seach the minimum elements in the array,
 // binary search will be a solution for this problem
 // time complexity is O(logN) as we dicard the half of the array every times 
+
+// Review
+// 어레이가 로테이트되고 솔티드 됬다고 봤을 때, 바이너리 서치를 사용에서 이점을 취할 수 있다
+// 어레이 중에 가장 작은 값을 찾는 문제기 떄문에
+// 미들 포인터, 시작점, 끝점을 잡고
+// 미들 포인터와 끝점을 비교해서 만약 미들포인터가 크면 시작점을 미들포인터 + 1 로 옮김 
+// 정렬 됬고 로테이드 됬기 떄문에
+// (+ 1을 왜하냐? 어레이중에 어떠한 엘레먼트보다 크다는건 minimum element 로 간주 될 수 없음)
+// 반대로 ...
 public int findMin(int[] nums) {
 		// binary search
 		int start = 0;
@@ -35,6 +45,7 @@ public int findMin(int[] nums) {
 // we iterate through the array from the second element to the last element
 // if an element is less than the previous element, we return the element as the min element
 // if the loop completes without finding a minimum element, we return the first element as the minimum
+// [2,3,4,1]
 public int findMin(int[] nums) {
     for(int i = 1; i < nums.length; i++) {
         if(nums[i] < nums[i -1]) {

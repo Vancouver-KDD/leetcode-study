@@ -17,7 +17,6 @@ output [1,8,2,7,3,6,4,5]
 [8->7->6->5->null]
 // divide => reverse => merge node by node
 
-//
 public void reorderList(ListNode head) {
      // in this case, we have nothing to do
      if(head == null || head.next == null) return;
@@ -31,12 +30,31 @@ public void reorderList(ListNode head) {
      // tail of first half
      ListNode prev = null;
 
-     // this is how we divide the list into two part
+
+     // This code is dividing the linked list into two halves by using the fast and slow pointers. 
+     // The fast pointer moves two steps at a time, 
+     // while the slow pointer moves only one step. 
+     // This way, when the fast pointer reaches the end of the list, the slow pointer is at the middle of the list.
+
+    // The prev variable is used to keep track of the previous node of the slow pointer, 
+    // which will be used to split the linked list into two halves. 
+    // At the end of the loop, prev.next is set to null,
+    // which means the end of the first half of the linked list.
+
+    // Here's a detailed explanation of the loop:
+
+    // Initialize the prev pointer to null, slow pointer to head, and fast pointer to head.
+    // While fast is not null and fast.next is not null:
+    // Set prev to slow.
+    // Set slow to slow.next.
+    // Set fast to fast.next.next.
+    // Set prev.next to null, which cuts off the second half of the linked list and makes prev the last node of the first half.
      while(fast != null && fast.next != null) {
          prev = slow;
          slow = slow.next;
          fast = fast.next.next;
      }
+     // disconnect ..
      prev.next = null;
 
      ListNode list2 = reverse(slow);
