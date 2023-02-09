@@ -3,6 +3,8 @@
 // Input: head = [1,2,3,4,5], n = 2
 // Output: [1,2,3,5]
 
+// nth node <-> length
+
 // using two pointers; fast and slow
 // the fast pointer is moving one step more than slow pointer
 // then, both pointers are traversed until fast pointer reaches the end of the list
@@ -19,11 +21,16 @@ public ListNode removeNthFromEnd(ListNode head, int n) {
     ListNode slow = dummy;
     
     // advance fast n + 1 steps ahead of slow
+    // [1,2,3,4,5] head
+    // [0,1,2,3,4,5] fast
+    // if n is 2
+    // => [3,4,5]
     for (int i = 1; i <= n + 1; i++) {
         fast = fast.next;
-    }
+    }  
     
-    // move both forward until fast reaches the end of the linked list
+    // how to maintain n nodes apart between fast and slow pointer
+    // move both forward until fast reaches the end of the linked list    
     while (fast != null) {
         fast = fast.next;
         slow = slow.next;
