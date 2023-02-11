@@ -90,6 +90,7 @@ class Solution:
             mp[s[j]] = j + 1
         return ans
 
+
     # Solution 5: Using ASCII table to optimize space complexity to O(m) when m is the size of charset
     def lengthOfLongestSubstring_space(self, s: str) -> int:
         chars = [None] * 128
