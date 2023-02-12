@@ -16,4 +16,15 @@ var findMin = function(nums) {
     }
     return nums[left];
 } 
+var findMin = function(nums) {
 
+   return Math.min(...nums)
+
+} 
+
+// Time O(log(N)) | Space O(1)
+
+
+//find the middle point
+// decide go left or right
+// check the either
