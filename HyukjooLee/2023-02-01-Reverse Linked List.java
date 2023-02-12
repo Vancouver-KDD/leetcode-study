@@ -6,7 +6,7 @@
 // temp 는 current 의 다음 노드를 일시적으로 저장하기 위해 사용
 
 //       [null -> 1 -> 2 -> 3 -> null]
-//        prev   cur                   (0) initialize
+//        prev   cur                   (0) initialize prev
 
 //        prev   cur  temp             (1) 다음 노드를 추적하기 위한 temp 생성 (current.next)
 
@@ -18,10 +18,18 @@
 
 // 1. using 3 pointers ; current, prev, temp 
 // to keep track of nodes to update reserved node
+// current is the node that used to traverse the list
+// prev node is for tracking the previous node so that we can change the pointer direction
+// temp node will be used to store the next node of current node
 // time complexity is O(N) as  we visit each node in the linked list (linear)
 
 // Follow up: A linked list can be reversed either iteratively or recursively.
 // Could you implement both?
+
+// Review
+// this problem requires the reverse version of given input which is a singly linked list
+// to do that, i am gonna use the 3 pointer
+// prev,current,temp
 public ListNode reverseList(ListNode head) {
         // initialize current and prev node // 0
         ListNode current = head;
