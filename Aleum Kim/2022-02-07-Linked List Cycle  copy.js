@@ -24,7 +24,7 @@ var hasCycle = function(head, seen = new Set()) {
 var hasCycle = function(head) {
     let [ slow, fast ] = [ head, head];
 
-    while (fast && fast.next) {/* Time O(N) */
+    while (fast && fast.next) {/* Time O(N) Space O(1) */
         slow = slow.next;
         fast = fast.next.next;
 
@@ -32,5 +32,23 @@ var hasCycle = function(head) {
         if (hasCycle) return true;
     }
 
+    return false;
+};
+
+var hasCycle = function(head) {
+    if(!head) return false;
+
+    let fast = head;
+    let slow = head;
+
+    while(fast) {
+        if(!fast.next) {
+            return false;
+        } else {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        if(fast == slow) return true;
+    }
     return false;
 };
