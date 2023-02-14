@@ -18,7 +18,7 @@
  * @return {boolean}
  */
  var isSameTree = function(p, q) {
-    if (!p && !q) return true;
+    if (!p && !q) return true; 
     if (!p || !q) return false;
     return p.val === q.val
         && isSameTree(p.left, q.left)
@@ -27,3 +27,4 @@
 
 //Time Complexity : O(N)
 //Space Complexity : O(1)
+//DFS Recursion
