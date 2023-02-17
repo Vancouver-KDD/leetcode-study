@@ -11,8 +11,7 @@ var reverseLinkedList = (head) =>{
         head.next = current;
         current = head;
         head = next;
-    }
-    return current;
+    } return current;
 
     //T.C : O(N) while loop with checking linked list
     //S.C : O(1) No extra space needed
