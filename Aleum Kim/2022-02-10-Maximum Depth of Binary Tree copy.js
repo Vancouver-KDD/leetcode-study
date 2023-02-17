@@ -1,24 +1,28 @@
-View on Github
 /**
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/
  * TIme O(N) | Space O(N)
  * @param {TreeNode} root
  * @return {number}
  */
- var maxDepth = function(root) {
-    const isBaseCase = root === null;
-    if (isBaseCase) return 0;
-
-    return dfs(root);
+var maxDepth = function(root) {
+    // 1 + Math(1,2) =
+    if(root === null)
+       return 0;
+       return Math.max(maxDepth(root.left)+1, maxDepth(root.right)+1)
 };
 
-const dfs = (root) => {
-    const left = maxDepth(root.left);
-    const right = maxDepth(root.right);
+const maxDepth = (root) => {
+    let maxDepth = 0;
+    
+    let BFS = (node, level) => {
+        if(node===null) return
 
-    const height = Math.max(left, right);
-
-    return height + 1;
+        if(level > maxDepth) maxDepth = level;
+        BFS(node.left, level+1)
+        BFS(node.right, level+1)
+    }
+    BFS(root, 1)
+    return maxDepth
 }
 
 /**
