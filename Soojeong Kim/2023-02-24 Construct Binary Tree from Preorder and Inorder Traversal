@@ -1,0 +1,43 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        //preorder -> 노드 -> 왼쪽 노드 순회 -> 오른쪽 전부 순회
+        //inorder ->  왼쪽 -> 노드 -> 오른쪽
+        //binary tree로 만들기
+        //preorder[0] = root -> same value 찾기 in inorder
+        //계속 root를 찾아나가는 recursive
+        return helper(0,0, inorder.length -1, preorder, inorder);
+    }
+    public TreeNode helper(int prestart, int instart, int inEnd, int[] preorder, int [] inorder) {
+
+        if(prestart > preorder.length -1 || instart > inEnd) {
+            return null;
+        }
+        //root 찾기
+        TreeNode root = new TreeNode(preorder[prestart]);
+        int inIndex = 0;
+        for(int i = instart;i<=inEnd;i++) {
+            if(inorder[i] == root.val){
+                inIndex = i;
+            }
+        }
+        root.left = helper(prestart+1, instart, inIndex-1, preorder, inorder);
+        root.right = helper(prestart+inIndex-instart +1, inIndex+1, inEnd, preorder, inorder);
+        return root;
+
+    }
+}
