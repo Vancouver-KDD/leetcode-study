@@ -1,15 +1,18 @@
 let cloneGraph = (graph) => {
-    let map = {};
-    return traverse(graph);
-
-    let traverse = (node) => {
-        if(!node) return node;
-        if(!map[node.label]) {
-            map[node.label] = new UndirectedGraphNode(node.label);
-            map[node.label].neighbors = node.neighbors.map(traverse);
+    let start = node; 
+    if (start === null) return null;
+    const vertexMap = new Map(); 
+    const queue = [start]
+    vertexMap.set(start, new Node(start.val)); 
+    while (queue.length > 0) {
+        const currentVertex = queue.shift(); 
+        for (const neighbor of currentVertex.neighbors) { s
+            if (!vertexMap.has(neighbor)) {
+                vertexMap.set(neighbor, new Node(neighbor.val))
+                queue.push(neighbor); 
+            }
+            vertexMap.get(currentVertex).neighbors.push(vertexMap.get(neighbor)); 
         }
-
-        return map[node.label];
-
     }
+   return vertexMap.get(start); 
 }
