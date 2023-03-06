@@ -28,3 +28,20 @@ class Solution:
         self.helper(node.left, count)
         count.append(node.val)
         self.helper(node.right, count)
+
+    def kthSmallest_2(self, root, k):
+        n = 0
+        stack = []
+        curr = root
+
+        # Use in-order but in iterative way
+        while curr and stack:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+
+            curr = stack.pop()
+            n += 1
+            if n == k:
+                return curr.val
+            curr = curr.right

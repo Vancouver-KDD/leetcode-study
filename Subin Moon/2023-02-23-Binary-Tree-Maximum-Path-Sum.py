@@ -24,6 +24,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
+# From the end nodes, calculate the maximum sum -> as going up the layer, replace the result with the maximum result
+# but the path doesn't split when it has parent nodes
+# If a node with negative val, then not including the node is one of the options
+# Time complexity: O(n)
 class Solution:
     def maxPathSum(self, root: TreeNode) -> int:
         res = [root.val]
