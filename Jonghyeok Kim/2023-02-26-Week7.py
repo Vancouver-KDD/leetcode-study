@@ -1,195 +1,158 @@
-class Solution:
-    def leastInterval(self, tasks: List[str], n: int) -> int:
-        freq = Counter(tasks)
-        Most_freq = freq.most_common()[0][1]
-        Found_most = sum([freq[key] == Most_freq for key in freq])
-        return max(len(tasks), (Most_freq - 1) * (n + 1) + Found_most)
-    
-
-View on Github
-class Twitter:
-    def __init__(self):
-        self.count = 0
-        self.tweetMap = defaultdict(list)  # userId -> list of [count, tweetIds]
-        self.followMap = defaultdict(set)  # userId -> set of followeeId
-
-    def postTweet(self, userId: int, tweetId: int) -> None:
-        self.tweetMap[userId].append([self.count, tweetId])
-        self.count -= 1
-
-    def getNewsFeed(self, userId: int) -> List[int]:
-        res = []
-        minHeap = []
-
-        self.followMap[userId].add(userId)
-        for followeeId in self.followMap[userId]:
-            if followeeId in self.tweetMap:
-                index = len(self.tweetMap[followeeId]) - 1
-                count, tweetId = self.tweetMap[followeeId][index]
-                heapq.heappush(minHeap, [count, tweetId, followeeId, index - 1])
-
-        while minHeap and len(res) < 10:
-            count, tweetId, followeeId, index = heapq.heappop(minHeap)
-            res.append(tweetId)
-            if index >= 0:
-                count, tweetId = self.tweetMap[followeeId][index]
-                heapq.heappush(minHeap, [count, tweetId, followeeId, index - 1])
-        return res
-
-    def follow(self, followerId: int, followeeId: int) -> None:
-        self.followMap[followerId].add(followeeId)
-
-    def unfollow(self, followerId: int, followeeId: int) -> None:
-        if followeeId in self.followMap[followerId]:
-            self.followMap[followerId].remove(followeeId)
-            
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = []
-
-        subset = []
-
-        def dfs(i):
-            if i >= len(nums):
-                res.append(subset.copy())
-                return
-            # decision to include nums[i]
-            subset.append(nums[i])
-            dfs(i + 1)
-            # decision NOT to include nums[i]
-            subset.pop()
-            dfs(i + 1)
-
-        dfs(0)
-        return res
-    
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        res = []
-        can_len = len(candidates)
-        def dfs(start, comb, comb_sum):
-            if comb_sum == target:
-                res.append(comb.copy())
-                return
-            if start >= can_len or comb_sum > target:
-                return
-            dfs(start, comb + [candidates[start]], comb_sum + candidates[start])
-            dfs(start+1, comb, comb_sum)
-        dfs(0,[],0)
-        return res
-    
-class Solution:
-    def permute(self, nums: List[int]) -> List[List[int]]:
-        res = []
-
-        # base case
-        if len(nums) == 1:
-            return [nums[:]]  # nums[:] is a deep copy
-
-        for i in range(len(nums)):
-            n = nums.pop(0)
-            perms = self.permute(nums)
-
-            for perm in perms:
-                perm.append(n)
-            res.extend(perms)
-            nums.append(n)
-        return res
+from typing import List
 
 class Solution:
-    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        nums.sort()
-        def dfs(nums, sub):
-            res.append(sub)
-            if len(nums) == 0:
-                return
-            for i in range(len(nums)):
-                if i == 0 or nums[i] != nums[i-1]:
-                    dfs(nums[i+1:], sub+[nums[i]])
-        dfs(nums, [])
-        return res
-            
-class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        candidates.sort()
-        res = []
-        def dfs(candidates, comb, comb_sum):
-            if comb_sum == target:
-                res.append(comb.copy())
-            if comb_sum > target:
-                return
-            for idx, n in enumerate(candidates):
-                if idx == 0 or candidates[idx-1] != candidates[idx]:
-                    dfs(candidates[idx+1:], comb + [candidates[idx]], comb_sum + candidates[idx])
-        dfs(candidates, [], 0)
-
-        return res
-    
-class Solution:
-    def exist(self, board: List[List[str]], word: str) -> bool:
-        ROWS, COLS = len(board), len(board[0])
-        path = set()
+    def numIslands(self, grid: List[List[str]]) -> int:
+        # if a node is 1, increase the number of island and visit left, right , up, down
+        # if it is 0, move to the next node
+        # if the visited land is 1, mark as 0 and visit left, right , up, down
+        # if it is 0, stop
+        m = len(grid)
+        n = len(grid[0])
         
-        def dfs(r, c, i):
-            if i == len(word):
-                return True
-            
-            if not (-1<r<ROWS and -1<c<COLS and word[i] == board[r][c] and (r,c) not in path):
+        def visit_adjacent(cur_m, cur_n):
+            coord = [(0,-1),(-1,0),(0,1),(1,0)]
+            for c in coord:
+                adjacent_coord = (cur_m + c[0], cur_n + c[1])
+                if adjacent_coord[0] >= 0 and adjacent_coord[1] >= 0 and adjacent_coord[0] < m and adjacent_coord[1] < n:
+                    # if the visited land is 1, mark as 0 and visit left, right , up, down
+                    if grid[adjacent_coord[0]][adjacent_coord[1]] == "1":
+                        grid[adjacent_coord[0]][adjacent_coord[1]] = "0"
+                        visit_adjacent(adjacent_coord[0], adjacent_coord[1])
+
+
+        island = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    island += 1
+                    grid[i][j] = "0"
+                    visit_adjacent(i,j)
+
+        return island
+    
+grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+
+class Solution:
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        if not node:
+            return None
+        old2new = {}
+        init_node = Node(node.val)
+        old2new[node] = init_node
+        q = collections.deque([node])
+        while q:
+            cur_node = q.popleft()
+            neighbor_nodes = cur_node.neighbors
+            for neighbor_node in neighbor_nodes:
+                # if the neighbor is not visited creat and connect
+                if neighbor_node not in old2new:
+                    q.append(neighbor_node)
+                    new_node = Node(neighbor_node.val)
+                    old2new[neighbor_node] = new_node
+                    # add the new node to the cloned graph
+                    old2new[cur_node].neighbors.append(new_node)
+                if old2new[neighbor_node] not in old2new[cur_node].neighbors:
+                    old2new[cur_node].neighbors.append(old2new[neighbor_node])
+        return init_node
+
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        def detect_cyle(course, visited_set):
+            if course not in self.pre_list:
                 return False
-            path.add((r,c))
-            res = (dfs(r - 1, c, i + 1) or
-                   dfs(r + 1, c, i + 1) or
-                   dfs(r, c - 1, i + 1) or
-                   dfs(r, c + 1, i + 1))
-            path.remove((r,c))
-            
-            return res
-        for r in range(ROWS):
-            for c in range(COLS):
-                res = dfs(r, c, 0)
-                if res:
+            if course in visited_set:
+                return True
+
+            visited_set.add(course)
+            for prerequisite in self.pre_list[course]:
+                if detect_cyle(prerequisite, visited_set):
                     return True
-        return False
+            visited_set.remove(course)
+            return False
         
-class Solution:
-    def partition(self, s: str) -> List[List[str]]:
-        res = []
-        def dfs(left, sub):
-            if left == len(s):
-                res.append(sub.copy())
-                return
-            for right in range(left, len(s)):
-                if is_palindrome(left, right):
-                    sub.append(s[left:right+1])
-                    dfs(right+1, sub)
-                    sub.pop()
-                
-        def is_palindrome(left, right):
-            while left <= right:
-                if s[left] != s[right]:
-                    return False
-                left += 1
-                right -=1
-            return True
+
+        self.pre_list = {}
+        for c, p in prerequisites:
+            if c not in self.pre_list:
+                self.pre_list[c] = [p]
+            else:
+                self.pre_list[c].append(p)
         
-        dfs(0,[])
-        return res
+        for course in self.pre_list.keys():
+            visited_set = set()
+            if detect_cyle(course, visited_set):
+                return False
+
+        return True
+            
+num_course = 7
 
 class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
-        if digits == "":
-            return ""
-        letter = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', 
-                   '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
-        res = []
-        def dfs(i, sub):
-            if len(sub) == len(digits):
-                res.append(sub)
-                return
-            string = letter[digits[i]]
-            for s in string:
-                dfs(i+1, sub+s)
+    def numberOfConnectedComponent(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        node_map = {}
+        island = 0
+        visited = set()
+        
+        # dfs adjacent nodes and mark them as visited
+        def visit_island(node):
+            if node not in visited:
+                visited.add(node)
+                for neighbor_node in node_map[node]:
+                    visit_island(neighbor_node)
+        
+        for a, b in prerequisites:
+            if a in node_map:
+                node_map[a].append(b)
+            else:
+                node_map[a] = [b]
+            if b in node_map:
+                node_map[b].append(a)
+            else:
+                node_map[b] = [a]
+                
+        for node in node_map.keys():
+            if node not in visited:
+                island += 1
+                visit_island(node)
+        
+        return island
+    
+class Solution:
+    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        # Check for an empty graph.
+        if not heights:
+            return []
+
+        p_visited = set()
+        a_visited = set()
+        
+        rows, cols = len(heights), len(heights[0])
+        directions = ((0, 1), (0, -1), (1, 0), (-1, 0))      
      
-        dfs(0,"")
-        return res
+        def traverse(i, j, visited):
+            if (i, j) in visited:
+                return
+            visited.add((i, j))
+            # Traverse neighbors.
+            for direction in directions:
+                next_i, next_j = i + direction[0], j + direction[1]
+                if 0 <= next_i < rows and 0 <= next_j < cols:
+                    # Add in your question-specific checks.
+                    if heights[next_i][next_j] >= heights[i][j]:
+                        traverse(next_i, next_j, visited)
+
+        for row in range(rows):
+            traverse(row, 0, p_visited)
+            traverse(row, cols - 1, a_visited)
+
+        for col in range(cols):
+            traverse(0, col, p_visited)
+            traverse(rows - 1, col, a_visited)
+
+        return list(p_visited & a_visited)
