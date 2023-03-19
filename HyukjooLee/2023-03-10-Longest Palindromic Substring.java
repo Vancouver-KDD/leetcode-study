@@ -1,4 +1,4 @@
-// Given a string s, return the longest  palindromic substring in s
+// Given a string s, return the longest palindromic substring in s.
 
 // Input: s = "babad"
 // Output: "bab"
@@ -7,10 +7,13 @@
 // Input: s = "cbbd"
 // Output: "bb"
 
-// 1. looping through each character in the string as the center of a potential palindrome,
-// and expand around that center to check for palindromes of even and odd length
-// time complexity is O(N^2) = the length of the string, 
-// space complexity is O(1) as we only use a constant amount of extra space (start and end)
+// 입력 string 의 가능한 모든 substring 들을 반복하면서 palindromic substring 인지 확인
+// substring 의 중간에서 시작해서 양쪽 끝으로 바깥쪽으로 이동하는 two pointers 을 이용 할 수 있음
+
+// using two pointers starting from the middle of the substring and moving outwards both ends
+// time complexity is O(N^3) 
+// possible substrings of the string O(N^2) * O(N); using the two-pointer technique
+// space complexity is O(1); extra space to store the indices of the substring found so far
 public String longestPalindrome(String s) {
     int n = s.length();
     if (n < 2) {
