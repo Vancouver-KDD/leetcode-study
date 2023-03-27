@@ -8,7 +8,7 @@ Output: true
 """
 class Solution:
     # O(E+V)
-    def validTree(self, n: int, edges:list[list[int]]) -> bool:
+    def validTree(self, n: int, edges: list[list[int]]) -> bool:
         # Trees are not allowed to have a loop
         # All nodes have to be connected (verified node # = visited node)
         if not n:
@@ -19,7 +19,11 @@ class Solution:
             adj[n1].append(n2)
             adj[n2].append(n1)
 
+        # for the example of edges = [[0,1], [0,2], [0,3], [1,4]]
+        # adj = {0: [1, 2, 3], 1: [4]}
+
         visit = set()
+
         def dfs(i, prev):
             if i in visit:  # loop
                 return False
@@ -27,8 +31,8 @@ class Solution:
             for j in adj[i]:
                 if j == prev:
                     continue
-                if not dfs(j, i):   # loop
+                if not dfs(j, i):   # loop; the parent node is the child node of its child node
                     return False
             return True
 
-        return dfs(0, -1) and n == len(visit)
+        return dfs(0, -1) and n == len(visit)  # start from node 0, -1 is not going to be in our input
