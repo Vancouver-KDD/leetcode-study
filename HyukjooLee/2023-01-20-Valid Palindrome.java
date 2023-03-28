@@ -50,7 +50,8 @@ public static boolean isPalindrome_2(String s) {
 }
 
  // 3. two pointer Approach
- // iime complexity is O(logN) as we only have to loop through half the length
+// time complexity is O(N), not O(logN) 
+// iterate over the entire string once to compare each pair of characters pointed by two pointers
 public static boolean isPalindrome_3(String s) {
 	int left = 0;
 	int right = s.length() - 1;
@@ -74,3 +75,88 @@ public static boolean isPalindrome_3(String s) {
 	}
 	return true;
 }
+
+
+// review
+
+// preprocess string
+// 3 * O(N), where n is the length of the input string => O(N)
+// 3 * O(N), sb, stack, reveredStr 
+private static String preprocessString(String s) {
+    
+    // to lowercase
+    s = s.toLowerCase();
+    StringBuilder sb = new StringBuilder();
+
+    // remove non-numeric values
+    for(char c: s.toCharArray()) {
+        // check chars are letters of digits
+        if(Character.isLetterOrDigit(c)) {
+            sb.append(c);
+        }
+    }
+    return sb.toString();
+}
+
+isPalindrome(String s) {
+
+    s = preprocessString(s);
+    Stack<Character> stack = new Stack<>();
+    for(char c : s.toCharArray()) {
+        stack.push(c);
+    }
+
+    String reversedString = "";
+    while(!stack.empty()) {
+        reversedString += stack.pop();
+    }
+    return s.equals(reversedString);
+}
+
+
+// if a input string is very long, this solution can be inefficient
+// because it requires too much memory space to store filtered string ,reversed string, also this solution uses stack
+// to handle with the problems, we can use two pointer approach to solve this problem
+
+private static String preprocessString(String s) {
+    
+    // to lowercase
+    s = s.toLowerCase();
+    StringBuilder sb = new StringBuilder();
+
+    // remove non-numeric values
+    for(char c: s.toCharArray()) {
+        // check chars are letters of digits
+        if(Character.isLetterOrDigit(c)) {
+            sb.append(c);
+        }
+    }
+    return sb.toString();
+}
+
+
+// s.preprocessString(s); // it takes N space complexity though
+int l = 0;
+int r = s.length() - 1;
+
+while(l <= r) {
+	char lChar = s.chatAt(l);
+	char rChar = s.charAt(r);
+
+	if (!Character.isLetterOrDigit(leftChar)) {
+			left++;
+			continue; // break the iteration
+	} 
+	
+	if (!Character.isLetterOrDigit(rightChar)) {
+			right--;
+			continue;
+	}
+
+	if(Character.toLowerCase(lChar) != Character.toLowerCase(rChar)) return false;
+
+	left++;
+	right--;
+}
+
+return true;
