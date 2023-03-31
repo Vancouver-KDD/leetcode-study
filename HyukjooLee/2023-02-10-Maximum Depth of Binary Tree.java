@@ -12,6 +12,19 @@
 // time complexity is O(N) = the number of nodes
 // space complexity is O(N) if the tree is completely unbalanced
 // could be O(logN) if tree is completely balanced because of the height of the tree = O(logN)
+
+
+public int maxDepth(TreeNode root) {
+    if (root == null) {
+        return 0;
+    }
+    int leftDepth = maxDepth(root.left);
+    int rightDepth = maxDepth(root.right);
+    return Math.max(leftDepth, rightDepth) + 1;
+}
+
+=> 
+
 class Solution {
     public int maxDepth(TreeNode root) {
         return (root == null ) ? 0 : 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
@@ -23,7 +36,7 @@ class Solution {
 // processes the nodes in the queue level by level (starting from root node)
 // adding the children of each node to the queue
 // count the number of levels processed => return
-// time complexity is O(N) = the number of nodes in tree
+// time complexity is O(N) = the number of nodes in tree; visit each node once and only once
 // space complexity is O(n) = max size of the queue = the number of nodes in tree
 class Solution {
     public int maxDepth(TreeNode root) {
@@ -42,3 +55,19 @@ class Solution {
       return depth;
     }
 }
+
+
+// review
+
+// the maximum depth of a binary tree is the maximum number of steps to reach a leaf node from the root node.
+// a leaf node 
+
+        1     - 1 + max( H(2-subtree), H(3-subtree))
+
+      2   3   - H2
+
+    4 5  6 7  - H3
+  8           - H4
+
+
+
