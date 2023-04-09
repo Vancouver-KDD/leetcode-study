@@ -8,7 +8,6 @@ import java.util.*;
 
 class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
-        int result = 0;
         //end로 비교하기
         Arrays.sort(intervals, (i1, i2) -> Integer.compare(i1[1], i2[1]));
         int end = intervals[0][1];
