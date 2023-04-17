@@ -8,19 +8,13 @@
 - 스터디를 통해 알고리즘/자료구조 문제해결 능력 기르기
 
 ## 🗓 기간
-2023.01.15(일) - 2023.04.09(일) 오후 8시
+2023.04.30(일) - 2023.06.04(일) 오후 8시
 
 ## ❓ 방법 
 > 🖋 셀프 스터디
 
-#### Easy & Medium Group
-- 월-금에 거쳐 1일 1문제(총 5문제 풀기)
-- 문제는 Blind 75 easy & medium (https://neetcode.io/practice)
-- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
-
-#### Medium & Hard Group
-- 월-금에 거쳐 1일 2문제(총 10문제 풀기)
-- 문제는 Neetcode 150 medium & hard (https://neetcode.io/practice)
+#### Easy 30
+- 월-일에 거쳐 1일 1문제(총 5문제 풀기)
 - 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
 
 > 🔖 모의 인터뷰
