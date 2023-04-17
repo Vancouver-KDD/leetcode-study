@@ -1,5 +1,5 @@
 
-# leetcode-study
+# Algo&DS-study
 
 이곳은 Technical interview준비를 위해 Algo&DS 문제를 함께 공부하는 그룹입니다. 
 
