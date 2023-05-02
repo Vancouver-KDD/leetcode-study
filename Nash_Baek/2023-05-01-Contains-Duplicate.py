@@ -1,3 +1,5 @@
+# For more description, please visit the blog below.
+# https://peterdrinker.tistory.com/473
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
         # Error handling
