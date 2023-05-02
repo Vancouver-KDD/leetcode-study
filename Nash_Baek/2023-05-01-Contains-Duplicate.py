@@ -5,13 +5,11 @@ class Solution:
         # It requires O(1) of time complexity
         if len(nums) == 0 or len(nums) > 10**5:
             raise ValueError("Invalid length of list")
-            # return False
             
         # It requires O(N) of time complexity
         for element in nums:
             if element < -10**9 or element > 10**9:
                 raise ValueError("Invalid range of value")
-                # return False
 
         # Change the data type from list to set to remove duplicated elements.
         # The time complexity of set is O(1)
