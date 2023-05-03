@@ -1,4 +1,6 @@
 class Solution:
+    # time complexity: O(n)
+    # space complexity: O(1)
     def containsDuplicate(self, nums: list[int]) -> bool:
         if len(nums) < 1 or len(nums) > 10**5:
             # check the length
