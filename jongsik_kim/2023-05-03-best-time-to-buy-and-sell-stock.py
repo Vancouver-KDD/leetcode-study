@@ -1,5 +1,7 @@
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
+        # time complexity: O(n)
+        # space complexity: O(1)
         if len(prices) < 1 or len(prices) > 10**5:
             raise ValueError('Invalid Length')
         max_profit = 0
