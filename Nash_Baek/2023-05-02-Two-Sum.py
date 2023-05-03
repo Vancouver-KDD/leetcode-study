@@ -1,3 +1,5 @@
+# For more description, please visit the blog below.
+# https://peterdrinker.tistory.com/475
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         # Error handling part
@@ -20,9 +22,3 @@ class Solution:
                 return first_index, last_index
             except ValueError:
                 continue
-
-
-# solution = Solution()
-# lst = [5,1,3,2,6,8,7,4,7]
-# target = 9
-# print(solution.twoSum(lst, target))
