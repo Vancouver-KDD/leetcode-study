@@ -21,3 +21,5 @@ public class Solution {
         return new int[2];
     }
 }
+// Time Complexity : O(N) 
+// Space Complexity : O(N) 
