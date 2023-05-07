@@ -9,3 +9,6 @@ class Solution:
                 return [index, dict[diff]]
 
             dict[num] = index
+
+    # Time complexity:
+    # Space complexity:

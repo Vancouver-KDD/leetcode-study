@@ -9,3 +9,6 @@ class Solution:
             hashset.add(i)
 
         return False
+
+    # Time complexity: o(n)
+    # Space complexity: o(n)

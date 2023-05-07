@@ -26,3 +26,6 @@ class Solution:
 
         if res1 == res2:
             return True
+
+# Time complexity:
+# Space complexity:

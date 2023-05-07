@@ -11,3 +11,7 @@ class Solution:
                 profit = max(profit, price - cur_min)
 
         return profit
+
+
+# Time complexity:
+# Space complexity:
