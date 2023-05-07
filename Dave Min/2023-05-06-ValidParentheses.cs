@@ -14,8 +14,7 @@ public class Solution {
             else stk.Push(c);
         }
 
-        if(stk.Count() != 0) return false;
-        return true;
+        return stk.Count == 0? true:false;
     }
 }
 
