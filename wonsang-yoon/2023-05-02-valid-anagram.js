@@ -1,6 +1,6 @@
 var isAnagram = function(s, t) {
     //boundary check for string only and lowercase
-    if(t.length > s.length || typeof t === 'string' || typeof s === 'string' 
+    if(t.length > s.length
     || !/^[a-z]+$/.test(s) || !/^[a-z]+$/.test(t))
         return false;
     //make an duplicate of s
