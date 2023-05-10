@@ -1,4 +1,5 @@
 # For more description, please visit the blog below.
+# https://peterdrinker.tistory.com/482
 
 # class Solution:
 #     def reverseList(self, head_node: Optional[ListNode]) -> Optional[ListNode]:
