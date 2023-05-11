@@ -26,8 +26,11 @@ class LinkedList:
     def delete_first_node(self):
         if self.head_node is None:
             raise ValueError("This node is empty.")
-        else:
+        elif self.head_node.next:
             self.head_node = self.head_node.next
+        else:
+            self.head_node = None
+            
 
     def delete_last_node(self):
         if self.head_node is None:
