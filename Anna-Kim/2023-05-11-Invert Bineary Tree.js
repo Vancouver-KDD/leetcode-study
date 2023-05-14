@@ -1,25 +1,20 @@
-/**
- * https://leetcode.com/problems/invert-binary-tree/
- * TIme O(N) | Space O(N)
- * @param {TreeNode} root
- * @return {TreeNode}
- */
-var invertTree = (root) => {
-    const isBaseCase = root === null;
-    if (isBaseCase) return root;
+var invertTree = function(root) {
 
-    return dfs(root);
+    const reverseNodes = (node) => {
+        if(node == null) {
+            return;
+        }
+        reverseNodes(node.left);
+        reverseNodes(node.right);
+        
+        let hold = node.left;
+        node.left = node.right;
+        node.right = hold
+    }
+    reverseNodes(root)
+       return root;
 }
-
-const dfs = (root) => {
-    const left = invertTree(root.left);
-    const right = invertTree(root.right);
-
-    root.left = right;
-    root.right = left;
-
-    return root;
-}
+// TIme O(N) | Space O(n)
 
 /**
  * https://leetcode.com/problems/invert-binary-tree/
