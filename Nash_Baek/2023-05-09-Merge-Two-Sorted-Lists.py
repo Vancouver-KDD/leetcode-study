@@ -1,5 +1,8 @@
 # For more description, please visit the blog below.
+<<<<<<< HEAD
 # https://peterdrinker.tistory.com/483
+=======
+>>>>>>> 59d63ca (Finish merge two sorted lists)
 class ListNode:
     def __init__(self, value=0, next=None):
         self.value = value
