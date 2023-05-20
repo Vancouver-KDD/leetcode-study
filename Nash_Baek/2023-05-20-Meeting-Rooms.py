@@ -1,4 +1,5 @@
 # https://www.lintcode.com/problem/920/
+# https://peterdrinker.tistory.com/495
 
 class Interval:
     def __init__(self, start, end):
@@ -22,7 +23,7 @@ interval2 = Interval(5, 10)
 interval3 = Interval(15, 20)
 
 interval4 = Interval(5, 8)
-interval5= Interval(9, 15)
+interval5 = Interval(9, 15)
 
 intervals1 = []
 intervals1.append(interval1)
