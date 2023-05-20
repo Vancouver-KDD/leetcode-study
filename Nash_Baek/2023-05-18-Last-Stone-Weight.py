@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/last-stone-weight/
+# https://peterdrinker.tistory.com/492
 
 import heapq
 
