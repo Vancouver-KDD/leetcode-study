@@ -6,6 +6,10 @@ class PlusOne:
             ret.append(s)
         return ret
 
-plus_one = PlusOne()
-list = [9]
-print(plus_one.plus_one(list))
+def main():
+    plus_one = PlusOne()
+    list = [9]
+    print(plus_one.plus_one(list))
+
+if __name__ == '__main__':
+    main()
