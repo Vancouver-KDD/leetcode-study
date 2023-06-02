@@ -1,10 +1,10 @@
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        count = 0
+        bit_count = 0
         for i in str(bin(n)):
             if i == "1":
-                count += 1
-        return count
+                bit_count += 1
+        return bit_count
 
 
 s = Solution()
