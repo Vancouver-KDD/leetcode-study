@@ -1,6 +1,5 @@
 # Technical Interview Prep
-
-이곳은 Technical interview준비를 위해 Algo&DS 문제를 함께 공부하는 그룹입니다.
+신청 링크 : https://forms.gle/EvPoiiaAc8ZqDAPy6
 
 ## 📝 목표
 
