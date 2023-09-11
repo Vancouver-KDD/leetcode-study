@@ -53,3 +53,11 @@
 - 벌금의 10%는 스터디 운영비로 사용됩니다
 - 디파짓 소진 없이 완료하신 분은 모인 벌금을 배분해드립니다
 - 남은 디파짓은 돌려드립니다
+
+## Link
+  Group Chat: https://open.kakao.com/o/gRUk0sGf
+  E-Transfer: jk23oct@gmail.com
+  How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+  How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
+  Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul
+  Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
