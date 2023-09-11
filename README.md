@@ -56,7 +56,9 @@
 - Group Chat: https://open.kakao.com/o/gRUk0sGf  
 - E-Transfer: jk23oct@gmail.com  
 - How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
-- How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-for  
+- How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
 - Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
 - Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
 - Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
+- Question List: https://www.designgurus.io/course/grokking-the-coding-interview
+- 
