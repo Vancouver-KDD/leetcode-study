@@ -1,9 +1,9 @@
 //2023-09-12
 //limitation : the array has distinct numbers? --> maybe not 
-// 작업을 2번 하면 되지 않을까?  첫번째, square 를 만든다(absolute value 가 됨). 두번째, 2 point 방식으로 sorting 을 한다. 
+// 작업을 2번 하면 되지 않을까?  첫번째, square 를 만든다(absolute value 가 됨). 두번째, 2 pointers 방식으로 sorting 을 한다. 
 // example: 
 // Input: nums = [-4,-1,0,3,10]  -> 16, 1, 0, 9, 100
-//      => 2-point방식 :  first number is start, last number is end.  
+//      => 2-pointers방식 :  first number is start, last number is end.  
 
 //Time Complexity: O(N) 
 //Space Complexity: O(N) <-- it is only for return array
