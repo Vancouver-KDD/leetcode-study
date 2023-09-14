@@ -1,4 +1,9 @@
 class Solution:
+    '''
+    for a given number at index i, do a 2 pointer search from i+1 , end
+    runtime: O(n^2)
+    space: O(n)
+    '''
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums.sort()
 
@@ -13,7 +18,8 @@ class Solution:
             while lo < hi:
                 curr_sum = curr_num + nums[lo] + nums[hi]
 
-                if curr_sum == target: return target
+                if curr_sum == target:
+                    return target
 
                 if curr_sum < target:
                     lo += 1

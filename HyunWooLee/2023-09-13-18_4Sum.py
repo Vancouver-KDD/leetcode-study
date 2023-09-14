@@ -1,7 +1,7 @@
 class Solution:
-
     '''
-    Read from bottom to top of this page
+    Read from bottom to top.
+    - order: fourSumStep1, fourSumStep2, fourSumStep3, fourSum
 
     Step 4:
     Optimize Step 3.
@@ -46,13 +46,11 @@ class Solution:
     '''
     Step 3:
 
-    - same as step 2, but only save quadplet when it sums to target
+    - same as step 2, but only save quadruplet when it sums to target
     - Running this will TLE
     - Runtime O(n^k)
     - Space O(n)
-
     '''
-
     def fourSumStep3(self, nums: List[int], target: int) -> List[List[int]]:
 
         def dfs(lo, hi, curr_sum, path):
@@ -85,9 +83,8 @@ class Solution:
     output: [[1a,1b,1c,1d]]
 
     '''
-
     def fourSumStep2(self, nums: List[int], target: int) -> List[List[int]]:
-        def dfs(lo, hi, curr_sum, path):
+        def dfs(lo, hi, path):
             if len(path) == k:
                 result.append(path)
                 return
@@ -104,7 +101,7 @@ class Solution:
         k = 4
         result = []
         nums.sort()
-        dfs(0, len(nums) - 1, 0, [])
+        dfs(0, len(nums) - 1, [])
         return result
 
     '''
@@ -120,15 +117,14 @@ class Solution:
 
     '''
     def fourSumStep1(self, nums: List[int], target: int) -> List[List[int]]:
-
-        def dfs(lo, hi, curr_sum, path):
+        def dfs(lo, hi, path):
             if len(path) == k:
                 result.append(path)
                 return
 
             for i in range(lo, hi + 1):
                 # path + [nums[i]] --> passes in a copy of array
-                dfs(i + 1, hi, 0, path + [nums[i]])
+                dfs(i + 1, hi, path + [nums[i]])
 
         result = []
         k = 4
