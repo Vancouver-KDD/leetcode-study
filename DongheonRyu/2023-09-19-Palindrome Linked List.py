@@ -49,4 +49,5 @@ def isPalindrome3(self, head: Optional[ListNode]) -> bool:
                 return False
             left = left.next
             right =right.next
+        
         return True
