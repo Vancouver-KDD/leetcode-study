@@ -69,7 +69,7 @@ class Solution:
             return -1
 
         longest_cycle = 0
-        for i, child in enumerate(edges):
+        for i in range(len(edges)):
             curr_list_cycle_size = get_curr_list_cycle_size(i)
             longest_cycle = max(longest_cycle, curr_list_cycle_size)
         return -1 if longest_cycle == 0 else longest_cycle
@@ -144,10 +144,10 @@ class Solution:
         longest_cycle = 0
         visited = set()
 
-        for i, child in enumerate(edges):
+        for i in range(len(edges)):
             if i in visited:
                 continue
-            curr_list_cycle_size = get_curr_list_cycle_size(i, child)
+            curr_list_cycle_size = get_curr_list_cycle_size(i)
             longest_cycle = max(longest_cycle, curr_list_cycle_size)
 
         return -1 if longest_cycle == 0 else longest_cycle
