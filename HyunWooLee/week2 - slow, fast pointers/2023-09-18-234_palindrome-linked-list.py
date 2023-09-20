@@ -32,7 +32,7 @@ class Solution:
     - then whether odd, or even length LL, we just have to go throuogh
     2 items each
 
-    Runtime: O(n)
+    time: O(n)
     space: O(1)
     '''
 
