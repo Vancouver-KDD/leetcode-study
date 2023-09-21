@@ -1,6 +1,5 @@
-
-
-/*
+/* https://leetcode.com/problems/palindrome-linked-list/description/
+ * 
  * ## Description 
  * Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
  * 
