@@ -1,3 +1,9 @@
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution(object):
     def detectCycle(self, head):
         """
@@ -12,27 +18,16 @@ class Solution(object):
         """
         slow = head
         fast = head 
-
-        i = 0
-        while fast and fast.next is not None:
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-            i = i + 1
-            print("### Round %s ###" % i)
-            print("Slow: %s " % slow.val)
-            print("Fast: %s " % fast.val)
-            if slow.val == fast.val:  
-                print("### They met ###")
-                print("After they met, Slow: %s " % slow.val)
-                print("After they met, Fast: %s " % fast.val)
-                slow = head
-                print("### Resetting Slow: %s With the value %s ###" % (slow.val, head.val) )
-                while slow != fast:
-                    print("Util they meet, move just one for Slow : %s" % slow.val)
-                    print("Util they meet, move just one for Fast: %s" % fast.val)
-                    slow = slow.next
-                    fast = fast.next
-                print("They met again at: %s" % slow.val)
-                return slow
-            
-        return None
+            if slow == fast:  
+                break
+        else:
+            return None  
+          
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next        
+        return slow
