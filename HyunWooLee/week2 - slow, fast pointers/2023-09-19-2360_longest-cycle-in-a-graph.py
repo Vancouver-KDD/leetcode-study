@@ -91,6 +91,9 @@ class Solution:
      - So, that means it only takes 2 steps to find out 150 is not a cycle
     
     Then, we can store visited items, so we dont go through same items multiple times
+    
+    Runtime: O(n) # we are not doing search for spaces we already visited
+    Space: O(n) # the visited set size will not exceed the entire nodes
     '''
 
     def longestCycle(self, edges) -> int:
