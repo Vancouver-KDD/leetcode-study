@@ -24,6 +24,7 @@
             if (fruit == type1 || fruit == type2) {
                 currentMax++; 
             } else {
+                //only take the number of last fruit as adding the new fruit. 
                 currentMax = lastFruitCount + 1; 
             }
 
@@ -31,6 +32,8 @@
                 lastFruitCount++;
             } else {
                 lastFruitCount = 1; 
+
+                //move the pointers to the right. 
                 type1 = type2; 
                 type2 = fruit;
             }
