@@ -41,4 +41,4 @@ var threeSumClosest = function (nums, target) {
   return closestSum;
 };
 
-console.log(threeSumClosest([-1, 2, 1, -4], 1));
+// The overall time complexity (TC) of the provided code is approximately O(n*log(n)) for sorting the array and O(n^2) for the nested loops, resulting in an overall TC of O(n^2) since the nested loops dominate the time complexity.
