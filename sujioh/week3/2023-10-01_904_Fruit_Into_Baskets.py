@@ -4,20 +4,21 @@ import collections
 class Solution:
 
     def totalFruit(self, fruits: List[int]) -> int:
-        count = collections.defaultdict(int)
+        count = {}
         l, total, res = 0, 0, 0
 
         for r in range(len(fruits)):
-            count[fruits[r]] += 1
+            fruit = fruits[r]
+            count[fruit] = count.get(fruit, 0) + 1
             total += 1
 
             while len(count) > 2:
-                f = fruits[l]
-                count[f] -= 1
+                left_fruit = fruits[l]
+                count[left_fruit] -= 1
                 total -= 1
                 l += 1
-                if not count[f]:
-                    count.pop(f)
+                if count[left_fruit] == 0:
+                    del count[left_fruit]
             res = max(res, total)
 
         return res
