@@ -1,4 +1,4 @@
-def findMaxAverage(self, nums: List[int], k: int) -> float:
+def findMaxAverage(self, nums,k):
         max_value = 0
         current = 0
 
@@ -22,3 +22,4 @@ def findMaxAverage(nums, k):
         max_avg = max(max_avg, avg)
 
     return max_avg
+
