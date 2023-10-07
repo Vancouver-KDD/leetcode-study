@@ -1,7 +1,7 @@
 # sliding window problem
 
 def totalFruit(self, fruits: List[int]) -> int:
-        hash_map = collections.defaultdict(int)
+        hash_map = {}
         l, total, res = 0, 0, 0
 
         for i in fruits:
