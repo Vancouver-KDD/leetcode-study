@@ -34,3 +34,33 @@ var totalFruit = function (fruits) {
 
   return max;
 };
+
+//////////////
+function calc(arr) {
+  let q = new Set();
+  let result = 0;
+  let total = 0; //해당 total의 set에 설정되어 있는 각 objects의 total 합의 되어야함
+  let left = 0;
+
+  for (let j = 0; j < arr.length; j++) {
+    // make the hash table with the given array
+    if (q.has(arr[j])) {
+      q.set(arr[j], q.get(arr[j]) + 1);
+      total++;
+    } else {
+      q.set(arr[j], 1);
+      total++;
+    }
+
+    while (q.size > 2) {
+      q.delete(arr[left]);
+      q.set(arr[left], q.get(arr[left] - 1));
+      total--;
+      left++;
+    }
+
+    result = Math.max(result, total);
+  }
+
+  return result;
+}
