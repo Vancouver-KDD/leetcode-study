@@ -32,3 +32,48 @@ class Solution(object):
             max_no_of_fruits = max(max_no_of_fruits,curr_no_of_fruits) #update max_no_of_fruits if current no of fruits is greater than maximum no of fruits
             
         return max_no_of_fruits
+    
+
+    aaaa(c)bb(c)aab k = 3;
+'aaaa' 2 conditions c
+
+
+
+# Create Dictionary 
+# Save all the occurences of the chracters by looping through the given string
+# { "a": 2 }
+
+# Loop through this dictionary with the key / values 
+# First have to check occurence is more than k. chracters that are less than 'k'
+# Once found a character that is less than 'k'
+# Split the given string with the chracter that is less than k. 
+
+s: str, k: int 
+
+
+char_dict = {}
+
+k = 3, aabbcc
+
+
+{a: 1, b: 2}
+for character in s:
+	if chracter is in char_dict.keys():
+  		count =  char_dict[character]
+      char_dict[chracter] = count + 1
+    else:
+    	char_dict[charcter] = 1
+
+    #keys      #count
+for character, occurence in char_dict.items():
+				
+      if occurence is less than k:
+      
+      		return max(logestSubsring(sub_string, k) for sub_string in s.split(chracter))
+          aabb
+          # aaacbb k = 2
+          aaa bb
+  if len(s) < k 
+  	reutrn 0
+    
+  return len(s)
