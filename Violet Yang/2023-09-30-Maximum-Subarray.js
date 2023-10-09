@@ -15,4 +15,4 @@ const maxSubArray = (nums) => {
         
     }
     return maxSum
-}git
+}
