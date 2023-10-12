@@ -1,7 +1,8 @@
 
+# [[1,2],[2,3],[1,3]]
+
 def eraseOverlap(intervals):
     intervals.sort()
-
     res = 0
     prevEnd = intervals[0][1]
     
