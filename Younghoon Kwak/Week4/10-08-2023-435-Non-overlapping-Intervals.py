@@ -1,7 +1,6 @@
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         intervals.sort()
-        @cache
         def dfs(idx):
             if idx==len(intervals):
                 return 0
