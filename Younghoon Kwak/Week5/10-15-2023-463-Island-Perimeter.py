@@ -1,9 +1,4 @@
-class Solution(object):
-    def reverseList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+
 class Solution(object):
     def islandPerimeter(self, grid):
         """
