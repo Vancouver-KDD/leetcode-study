@@ -22,10 +22,17 @@ class Solution(object):
             cur=cur.next
             prev=prev.next
 
-        for i in range(right-left):
-            temp=cur.next
-            cur.next=temp.next
-            temp.next=prev.next
-            prev.next=temp    
+        for i in range(right-left): # Right: 5, Left: 3 (Right - Left = 2)
+            temp=cur.next # 1, 2(Prev), 3(Cur), 4(Temp), 5(Temp.Next), 6 
+            cur.next=temp.next # Move Cur to Next Node 
+            temp.next=prev.next # Move Prev Next to 
+            prev.next=temp  # Move what that next to cur to the pre next 
+
+        # Startegy
+        # Move Cur to the back for every move 
+        # Move what's next to current node to the beginning of the reversed list
+        # Move back what's here
+
 
         return dummy.next
+
