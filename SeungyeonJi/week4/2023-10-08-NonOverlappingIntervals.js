@@ -18,3 +18,10 @@ var eraseOverlapIntervals = function (intervals) {
   }
   return counter;
 };
+
+// O(n * log(n))
+
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
