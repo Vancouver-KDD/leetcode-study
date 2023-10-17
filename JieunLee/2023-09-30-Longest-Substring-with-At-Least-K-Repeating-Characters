@@ -1,0 +1,31 @@
+class Solution:
+    def max_uniq_cnt(self, s:str) -> int:
+        char_set = set()
+        for c in s:
+            char_set.add(c)
+        return len(char_set)
+
+    def longestSubstring(self, s: str, k: int) -> int:
+        max_uc = self.max_uniq_cnt(s) # max_uc: 3
+        max_cnt = 0
+        for curr_uc in range(1, max_uc + 1): # curr_uc: 4
+            cnt_map = defaultdict(int)
+            start = end = at_least_k = 0
+            for end in range(len(s)):
+                cnt_map[s[end]] += 1
+                if cnt_map[s[end]] == k:
+                    at_least_k += 1
+                
+                while len(cnt_map) > curr_uc:
+                    if cnt_map[s[start]] == k:
+                        at_least_k -= 1
+                    cnt_map[s[start]] -= 1
+                    if cnt_map[s[start]] == 0:
+                        del cnt_map[s[start]]
+                    start += 1
+                
+                if len(cnt_map) == curr_uc and at_least_k == len(cnt_map):
+                    sub_str_len = end - start + 1 # sub_str_len: 5 
+                    max_cnt = max(max_cnt, sub_str_len) # max_cnt: 5 
+
+        return max_cnt
