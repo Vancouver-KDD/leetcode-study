@@ -33,16 +33,12 @@ var connect = function(root) {
         }else{
             front.next = q.front();
             if(front.left){
-                if(front.left){
-                    q.push(front.left);
-                    q.push(front.right);
-                }
+                q.push(front.left);
+                q.push(front.right);
             }
         }
     }
 
     return root;
-
-
 
 };
