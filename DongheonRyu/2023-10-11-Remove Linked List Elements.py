@@ -3,9 +3,6 @@ def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNod
         while head and head.val ==val:
             head = head.next
         
-        if not head:
-            return head
-        
         current = head
         while current:
             if current.next and current.next.val == val:
