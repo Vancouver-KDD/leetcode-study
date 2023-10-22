@@ -1,0 +1,14 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        cnt_map = defaultdict(int)
+        max_str_len = 0
+        start = 0
+        for end in range(len(s)):
+            if s[end] in cnt_map:
+                start = max(start, cnt_map[s[end]] + 1)
+            cnt_map[s[end]] = end
+
+            str_len = end - start + 1 # str_len: 2
+            max_str_len = max(max_str_len, str_len) # max_str_len: 2
+
+        return max_str_len

@@ -1,0 +1,18 @@
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        basket = defaultdict(int)
+        max_cnt = 0
+        start = 0
+
+        for end in range(len(fruits)):
+            basket[fruits[end]] += 1
+    
+            if len(basket) > 2:
+                basket[fruits[start]] -= 1
+                if basket[fruits[start]] == 0:
+                    del basket[fruits[start]]
+                start += 1
+
+            max_cnt = max(max_cnt, end - start + 1)
+
+        return max_cnt        
