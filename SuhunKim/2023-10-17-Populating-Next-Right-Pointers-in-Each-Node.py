@@ -42,23 +42,21 @@ class Solution:
 #         return new_root.next
 
         # hacking method for targeting this problem
-#         length = 1
-#         prev_length = length
-#         tree = [root]
+        length = 1
+        prev_length = length
+        tree = [root]
         
-#         while tree:
-#             length -= 1
-#             temp = tree.pop(0)
-#             if not temp: break
-#             tree.append(temp.left)
-#             tree.append(temp.right)
+        while tree:
+            length -= 1
+            temp = tree.pop(0)
+            if not temp: break
+            tree.append(temp.left)
+            tree.append(temp.right)
             
-#             if length == 0:
-#                 length = prev_length * 2
-#                 prev_length = length
-#             else:
-#                 temp.next = tree[0]
+            if length == 0:
+                length = prev_length * 2
+                prev_length = length
+            else:
+                temp.next = tree[0]
                 
-#         return root
-        
-        
+        return root
