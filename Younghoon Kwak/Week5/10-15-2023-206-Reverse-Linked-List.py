@@ -10,7 +10,7 @@ class Solution(object):
 
         while current:
             next_node = current.next
-            current.next = new_list # null <- 1 
+            current.next = new_list # null <- 1 <- 2
             new_list = current # new_list : null <- 1 
             current = next_node # current -> 2
         
