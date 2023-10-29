@@ -1,4 +1,4 @@
-var rightSideView = function () {
+var rightSideView = function (root) {
   if (!root) return [];
   let queue = [root];
   let result = [];
