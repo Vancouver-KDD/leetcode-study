@@ -4,6 +4,7 @@ var connect = function (root) {
 
   while (queue.length) {
     const size = queue.length;
+    //첫 루프때는 가장 위 level의 node만, 두 번째는 두 번째 level의 노드만 들어가게 된다
     const level = { ...queue };
 
     for (let i = 0; i < size; i++) {
