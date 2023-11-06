@@ -26,8 +26,12 @@ class Solution:
 
 
 '''Summary
-BFS structure: queue, while, for 
+Summary: 
+- The code adapts the BFS search algorithm.
+- It leverages the observation that ode indexed node.next  = even-numbered
+- The 'next' pointer is employed to establish these connections within the same level of the tree.
 
+​
 1. while: while q exists 
 2. for loop: 
     - remove a node from each iteration 
