@@ -1,0 +1,22 @@
+var maxUniqueSplit = function(s) {
+    let seen = new Set();
+    let ans = 0;
+    
+    function dfs(start) {
+        if (start === s.length) {
+            ans = Math.max(ans, seen.size);
+            return;
+        }
+        
+        for (let i = start + 1; i <= s.length; i++) {
+            let substr = s.slice(start, i);
+            if (seen.has(substr)) continue;
+            seen.add(substr);
+            dfs(i);
+            seen.delete(substr);
+        }
+    }
+    
+    dfs(0);
+    return ans
+}
