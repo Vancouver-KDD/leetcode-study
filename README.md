@@ -9,7 +9,8 @@
 
 ## 🗓 기간
 
-- 2023.09.10(일) - 2023.11.12(일) 오후 8시 (첫째주 OT)
+- 2023.01.28(일) - 2023.03.24(일) 오후 8시 (첫째주 OT)
+- 9주 
 
 ## ❓ 방법
 
@@ -53,7 +54,6 @@
 - 남은 디파짓은 돌려드립니다
 
 ## Link
-- Group Chat: https://open.kakao.com/o/gRUk0sGf  
 - E-Transfer: jk23oct@gmail.com  
 - How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
@@ -61,4 +61,3 @@
 - Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
 - Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
 - Question List: https://www.designgurus.io/course/grokking-the-coding-interview
-- 
