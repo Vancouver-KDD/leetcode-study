@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-repeating-character-replacement/description/
+
 class Solution {
     public int characterReplacement(String s, int k) {
         int start = 0;
