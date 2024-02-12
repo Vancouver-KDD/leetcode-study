@@ -15,7 +15,7 @@ class Solution:
                  end = mid
                 
         return nums[start]
-    
+
 '''
 It maintains two pointers, start and end, which converge towards the minimum element.
 It compares the element at the mid with the element at the end pointer.
@@ -32,4 +32,11 @@ If nums[mid] <= nums[end], it means the minimum must be at mid or to its start, 
 만약에 미드포인트가 엔드포인트보다 작다면 
 이는 곳 미드~엔드까지는 오름차순으로 정리되어있다는 이야기이이다. 따라서 미드 이전을 탐색한다. 
 미드 이전이 여전히 오름차순이라면 인덱스 0을 리턴할 것이다. 아니라면 위의 로직을 이용해 범위를 줄인다. 
+'''
+
+'''
+if mid to end is increasing:
+    then focus on other half
+else:
+    move start pointer
 '''
