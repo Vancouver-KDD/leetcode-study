@@ -6,8 +6,7 @@ class Solution:
         # { ate: [zxcv, zxcv, zxcv], qwe: [qwer] }
         # and return values
         hm = {}
-        rs = []
-        for idx, item in enumerate(strs):
+        for item in strs:
             sortStr = "".join(sorted(item))
             hm[sortStr] = hm.get(sortStr, []) + [item]
 
