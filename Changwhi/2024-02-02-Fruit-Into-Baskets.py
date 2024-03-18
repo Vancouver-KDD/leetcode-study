@@ -38,3 +38,35 @@ class Solution:
                 left += 1
         res = max(res, len(fruits) - left)
         return res
+
+
+
+
+        class Solution {
+    public int totalFruit(int[] fruits) {
+      	int l = 0;
+      	int maxSizeOfBasket = 2;
+      	int maxNumberOfFruits = 0;
+      	int curNumberOfFruits = 0;
+        // data structure to store two different fruits
+      	Map<Integer, Integer> basket = new HashMap<>();
+		
+      	for (int r = 0; r < fruits.length; ++r) {
+      		// keep adding the new type of fruit until encountering another type of fruit
+          	basket.put(fruits[r], basket.getOrDefault(fruits[r], 0) + 1);
+          	curNumberOfFruits++;
+
+            while (basket.size() > maxSizeOfBasket) { // if encounter the third type of fruit, remove the first type of fruit [1(l), 2, 3, 2, 2]
+                  Integer fruitToBeRemoved = fruits[l];
+                  basket.put(fruitToBeRemoved, basket.get(fruitToBeRemoved) - 1); // decrease the first type of the fruit
+                  curNumberOfFruits--;
+                  l++;
+                  if (basket.get(fruitToBeRemoved) == 0) basket.remove(fruitToBeRemoved); // if the basket has no more fruit, remove it
+            }
+
+            maxNumberOfFruits = Math.max(maxNumberOfFruits, curNumberOfFruits);
+         }
+    		
+      	return maxNumberOfFruits;
+    }
+}
