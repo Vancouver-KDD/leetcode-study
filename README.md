@@ -1,6 +1,6 @@
 # Technical Interview Prep
 
-신청 링크 : https://forms.gle/VpFqrq3Smc3FPRdWA
+신청 링크 : [https://forms.gle/VpFqrq3Smc3FPRdWA](https://forms.gle/5zGBdCM3K84in4DZ7)
 
 ## 📝 목표
 
