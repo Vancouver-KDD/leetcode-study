@@ -2,6 +2,7 @@
  * Leetcode
  * problem: 2461
  * link: https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/
+ * tag: Sliding Window
  */
 
 /**

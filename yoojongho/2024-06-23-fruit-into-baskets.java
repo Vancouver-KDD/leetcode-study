@@ -2,6 +2,7 @@
  * Leetcode
  * problem: 904
  * link: https://leetcode.com/problems/fruit-into-baskets/
+ * tag: Sliding Window
  */
 
 class Solution {

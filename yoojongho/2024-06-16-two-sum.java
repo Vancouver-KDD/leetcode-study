@@ -2,6 +2,7 @@
  * Leetcode
  * problem: 1
  * link: https://leetcode.com/problems/two-sum/description/
+ * tag: Two Pointers
  */
 
 /**
