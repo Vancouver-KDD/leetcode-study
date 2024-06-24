@@ -1,6 +1,6 @@
 # Technical Interview Prep
 
-신청 링크 : https://forms.gle/VpFqrq3Smc3FPRdWA
+신청 링크 : [https://forms.gle/VpFqrq3Smc3FPRdWA](https://forms.gle/5zGBdCM3K84in4DZ7)
 
 ## 📝 목표
 
@@ -9,8 +9,7 @@
 
 ## 🗓 기간
 
-- 2023.01.28(일) - 2023.03.24(일) 오후 8시 (첫째주 OT)
-- 9주 
+- 2024.06.09(일) - 2024.08.25(일) 오후 8시 (첫째주 OT)
 
 ## ❓ 방법
 
@@ -32,7 +31,9 @@
 - 인터뷰어/인터뷰이 돌아가며 각 1문제씩 진행
 - 인터뷰어는 출제하는 문제의 다양한 솔루션을 숙지해야 하며 Follow-up Question도 준비
 - 문제는 그동안 풀었던 문제에서 랜덤 1개 선택
+- 줌 관리자 권한은 남은 사람에게 넘기고 종료
 
+  
 ## 💾 Rule of PR
 
 - 파일이름:
@@ -57,7 +58,7 @@
 - E-Transfer: jk23oct@gmail.com  
 - How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
-- Kakao Open chat: https://open.kakao.com/o/gPgvTD6f
+- Kakao Open chat: https://open.kakao.com/o/gqKcSkwg
 - Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
 - Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
 - Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
