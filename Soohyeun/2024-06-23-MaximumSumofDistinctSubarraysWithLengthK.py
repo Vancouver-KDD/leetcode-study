@@ -12,7 +12,7 @@ class Solution(object):
 
         for right, num in enumerate(nums):
             curr_window[num] = curr_window.get(num, 0) + 1
-            curr_sum += 1
+            curr_sum += num
             if right - left + 1 == k:
                 if len(curr_window) == k:
                     max_sum = max(max_sum, curr_sum)
