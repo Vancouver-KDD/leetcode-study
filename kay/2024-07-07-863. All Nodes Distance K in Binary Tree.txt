@@ -1,0 +1,61 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void traverse(TreeNode* root, unordered_map<int, vector<TreeNode*>>& graph, TreeNode *parent, int &size) {
+        if (root == NULL)
+            return;
+        size += 1;
+        if (parent)
+            graph[root->val].push_back(parent);
+        if (root->left) {
+            graph[root->val].push_back(root->left);
+            traverse(root->left, graph, root, size);
+        }
+        if (root->right) {
+            graph[root->val].push_back(root->right);
+            traverse(root->right, graph, root, size);
+        }
+    }
+    vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
+        unordered_map<int, vector<TreeNode*>> graph;
+        int size = 0;
+        traverse(root, graph, NULL, size);
+        vector<int> visited(501, 0);
+        vector<int> ans;
+        if (k == 0) {
+            ans.push_back(target->val);
+            return ans;
+        }
+
+        queue<TreeNode*> nodeQueue;
+        nodeQueue.push(target);
+        visited[target->val] = 1;
+        for (int i = 0 ; i < k && !nodeQueue.empty(); i++) {
+            int size = nodeQueue.size();
+            printf("size = %d\n",size);
+            for (int j = 0; j < size; j++) {
+                TreeNode* curNode = nodeQueue.front();
+                nodeQueue.pop();
+                for (auto & tmpNode : graph[curNode->val]) {
+                    if (i == k -1 && visited[tmpNode->val] == 0) {
+                        visited[tmpNode->val] = 1;
+                        ans.push_back(tmpNode->val);
+                    }
+                    else if (visited[tmpNode->val] == 0) {
+                        visited[tmpNode->val] = 1;
+                        nodeQueue.push(tmpNode);
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+};
