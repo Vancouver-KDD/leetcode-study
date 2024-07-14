@@ -1,0 +1,35 @@
+class Solution {
+public:
+    int binarySearch(vector<int>& nums, int left, int right, int target) {
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target) 
+                return mid;
+            else if (nums[mid] > target)
+                right = mid - 1;
+            else
+                left = mid + 1;
+        }
+        return -1;
+    }
+    int search(vector<int>& nums, int target) {
+        int left1 = 0, right1 = nums.size() -1, left2 = 0, right2 = nums.size() - 1;
+        for (int i = 0; i < nums.size() - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                right1 = i;
+                left2 = i + 1;
+            }
+        }
+        if (left2 == 0) {
+            return binarySearch(nums, left1, right1, target);
+        } else {
+            int interval1 = binarySearch(nums, left1, right1, target);
+            int interval2 = binarySearch(nums, left2, right2, target);
+            if (interval1 != -1)
+                return interval1;
+            if (interval2 != -1)
+                return interval2;
+            return -1;
+        }
+    }
+};
