@@ -1,0 +1,15 @@
+function sumNumbers(root: TreeNode | null): number {
+    let result: number = 0
+    function dfs(_root: TreeNode | null, represent: string) {
+        if (!_root) return
+        represent += _root.val
+        if (!_root.left && !_root.right) {
+            result += +represent
+            return
+        }
+        dfs(_root.left, represent)
+        dfs(_root.right, represent)
+    }
+    dfs(root, '')
+    return result
+}
