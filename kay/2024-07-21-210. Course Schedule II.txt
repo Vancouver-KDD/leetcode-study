@@ -1,0 +1,38 @@
+class Solution {
+public:
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<int> indegree(numCourses, 0);
+        vector<int> courseOrder;
+        unordered_map<int, vector<int>> graph;
+        for (auto requistes : prerequisites) {
+            int firstClass = requistes[1];
+            int secondClass = requistes[0];
+            indegree[secondClass]++;
+            graph[firstClass].push_back(secondClass);
+        }
+        queue<int> zeroDegreeQueue;
+        for (int i = 0; i < numCourses; i++) {
+            if (indegree[i] == 0) {
+                zeroDegreeQueue.push(i);
+                courseOrder.push_back(i);
+            }
+        }
+        while (!zeroDegreeQueue.empty()) {
+            int curCourse = zeroDegreeQueue.front();
+            zeroDegreeQueue.pop();
+            indegree[curCourse]--;
+            for (auto neighCourse : graph[curCourse]) {
+                indegree[neighCourse]--;
+                if (indegree[neighCourse] == 0) {
+                    zeroDegreeQueue.push(neighCourse);
+                    courseOrder.push_back(neighCourse);
+                    indegree[neighCourse]--;
+                }
+            }
+        }
+        if (courseOrder.size() == numCourses)
+            return courseOrder;
+        else
+            return vector<int>();
+    }
+};
