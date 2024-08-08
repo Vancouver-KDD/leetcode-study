@@ -3,6 +3,7 @@ class _Node {
     left: _Node | null
     right: _Node | null
     next: _Node | null
+    neighbors: any
     constructor(val?: number, left?: _Node, right?: _Node, next?: _Node) {
         this.val = val === undefined ? 0 : val
         this.left = left === undefined ? null : left
