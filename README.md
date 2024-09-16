@@ -1,6 +1,6 @@
 # Technical Interview Prep
 
-신청 링크 : [https://forms.gle/VpFqrq3Smc3FPRdWA](https://forms.gle/5zGBdCM3K84in4DZ7)
+신청 링크 : [https://kdd-leetcode-project01.vercel.app/link](https://kdd-leetcode-project01.vercel.app/link)
 
 ## 📝 목표
 
@@ -9,7 +9,7 @@
 
 ## 🗓 기간
 
-- 2024.06.09(일) - 2024.08.25(일) 오후 8시 (첫째주 OT)
+- 2024.09.29(일) - 2024.12.8(일) 오후 8시
 
 ## ❓ 방법
 
