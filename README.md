@@ -15,8 +15,8 @@
 
 > 🖋 셀프 스터디
 
-- 월-일에 거쳐 3문제 풀기 (2 문제는 매주 월요일에 공지, 1 문제는 본인 선택)
-- 선택한 1 문제는 풀이 네이버 카페에 개시 (Blind75 챌린지 by KDD)
+- 월-일에 거쳐 공지된 문제 풀기 (3-5 문제 예정)
+- 자유롭게 1 문제 더 선택하여 풀고 풀이를 네이버 카페에 개시 (Blind75 챌린지 by KDD)
 - 제목:
   ```
   [Name] subject
@@ -58,7 +58,7 @@
 - E-Transfer: jk23oct@gmail.com  
 - How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
-- Kakao Open chat: https://open.kakao.com/o/gqKcSkwg
+- Kakao Open chat: https://open.kakao.com/o/gNvIrgPg
 - Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
 - Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
 - Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
