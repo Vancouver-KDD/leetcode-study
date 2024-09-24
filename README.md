@@ -16,12 +16,6 @@
 > 🖋 셀프 스터디
 
 - 월-일에 거쳐 공지된 문제 풀기 (3-5 문제 예정)
-- 자유롭게 1 문제 더 선택하여 풀고 풀이를 네이버 카페에 개시 (Blind75 챌린지 by KDD)
-- 제목:
-  ```
-  [Name] subject
-  ```
-  (e.g. [Jonghyeok Kim] Best Time to Buy and Sell Stock)
 - 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
 
 > 🔖 모의 인터뷰
