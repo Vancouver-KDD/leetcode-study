@@ -1,6 +1,6 @@
 # Technical Interview Prep
 
-신청 링크 : [https://forms.gle/VpFqrq3Smc3FPRdWA](https://forms.gle/5zGBdCM3K84in4DZ7)
+신청 링크 : [https://kdd-leetcode-project01.vercel.app/link](https://kdd-leetcode-project01.vercel.app/link)
 
 ## 📝 목표
 
@@ -9,19 +9,13 @@
 
 ## 🗓 기간
 
-- 2024.06.09(일) - 2024.08.25(일) 오후 8시 (첫째주 OT)
+- 2024.09.29(일) - 2024.12.8(일) 오후 8시
 
 ## ❓ 방법
 
 > 🖋 셀프 스터디
 
-- 월-일에 거쳐 3문제 풀기 (2 문제는 매주 월요일에 공지, 1 문제는 본인 선택)
-- 선택한 1 문제는 풀이 네이버 카페에 개시 (Blind75 챌린지 by KDD)
-- 제목:
-  ```
-  [Name] subject
-  ```
-  (e.g. [Jonghyeok Kim] Best Time to Buy and Sell Stock)
+- 월-일에 거쳐 공지된 문제 풀기 (3-5 문제 예정)
 - 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
 
 > 🔖 모의 인터뷰
@@ -58,9 +52,8 @@
 - E-Transfer: jk23oct@gmail.com  
 - How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
-- Kakao Open chat: https://open.kakao.com/o/gqKcSkwg
+- Kakao Open chat: https://open.kakao.com/o/gNvIrgPg
 - Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
-- Naver Cafe: https://cafe.naver.com/vancouverkdd (Blind75 챌린지 by KDD)
 - Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
 - Question List: https://www.designgurus.io/course/grokking-the-coding-interview
 - Useful youtube: https://neetcode.io/practice
