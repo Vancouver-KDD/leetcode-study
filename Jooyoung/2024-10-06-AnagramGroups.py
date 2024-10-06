@@ -6,12 +6,12 @@ class Solution:
         d = {}
 
         for s in strs:
-            count = [0] * 26
+            c = [0] * 26
 
             for l in s:
-                count[ord(l) - ord('a')] += 1
+                c[ord(l) - ord('a')] += 1
 
-            ct = tuple(count)
+            ct = tuple(c)
 
             if ct in d:
                 d[ct].append(s)
