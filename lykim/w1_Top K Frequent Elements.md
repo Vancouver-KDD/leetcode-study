@@ -34,17 +34,28 @@ end
 ```
 
 ## Approach_2
-- Use bucket sort, array size is bounded to N. 
-- Record the 
+- Use bucket sort - create a frequency record array with size bounded to N, each element indicating the occurrence of num
 
 ### Complexity
-- Time complexity - O(n) with nested iteration
-- Space complexity - O(n) with creating arrays
+- Time complexity - O(n)
+- Space complexity - O(n) with creating the tally hash and frequency array
 
 
 ### Solution
 ```
-```
-### Solution
-```
+def top_k_frequent(nums, k)
+    count_hash = nums.tally
+    frequency = Array.new(nums.size)
+
+    count_hash.each do |key, val|
+        if frequency[val]
+            frequency[val] << key
+        else
+            frequency[val] = [key]
+        end
+    end
+
+
+    frequency.flatten.compact.last(k) # with flatten & compact, clean up the array and fetch the last k keys only
+end
 ```
