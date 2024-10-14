@@ -12,16 +12,13 @@ var groupAnagrams = function(strs) {
     6. if each word has the same array, push it to the key as a value
     7. reuturn values of a hashmap 
      */
-    
     let hashmap = {}
 
     for (let word of strs){
         const count = new Array(26).fill(0);
-
         for (let i = 0; i < word.length; i++){
             count[word[i].charCodeAt(0) - 'a'.charCodeAt(0)] += 1
         }
-
         // convert into string to use it as a key
         const stringCount = JSON.stringify(count);
         if (!hashmap[stringCount]){
@@ -29,6 +26,6 @@ var groupAnagrams = function(strs) {
         }
         hashmap[stringCount].push(word)
     }
-    return Object.values(hashmap)
 
+    return Object.values(hashmap)
 };
