@@ -1,10 +1,10 @@
 ## Approach_1
-- Use Hash structure to record the frequency of each element. Then use the largest k values to get the key
-- There's an array method `tally` doing the same job too
+- Use two pointers, the right one being `n` larger than the left pointer. once the right pointer reaches after the end of the linked list, the left pointer will be at nth element from the last.
+- Then set the next node to be the following one.
 
 ### Complexity
-- Time complexity - O(nlog(n)) due to sorting
-- Space complexity - O(n) with the Hash creation & result array creation of O(k)
+- Time complexity - O(n)
+- Space complexity - O(n)
 
 ### Solution
 ```
@@ -20,7 +20,23 @@
 # @param {Integer} n
 # @return {ListNode}
 def remove_nth_from_end(head, n)
+    dummy = ListNode.new(0, head)
+    left = dummy
+    right = head
+
+    while n > 0 && !right.nil? do
+        right = right.next
+        n -= 1
+    end
+
+    while !right.nil?
+        left = left.next
+        right = right.next
+    end
     
+    left.next = left.next.next
+
+    dummy.next
 end
 ```
 
