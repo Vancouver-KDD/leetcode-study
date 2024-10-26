@@ -1,6 +1,6 @@
 ## Approach
-- Contemplate about the condition to determine at which side the mininum exists - draw the permutations
-- if mid point is larger than the very right value, the minimum is at the right side. Otherwise, at the left side.
+- Contemplate the condition to determine at which side the minimum exists - draw the permutations
+- if the mid point is larger than the very right value, the minimum is at the right side. Otherwise, at the left side.
 
 ### Complexity
 - Time complexity - O(logn)
