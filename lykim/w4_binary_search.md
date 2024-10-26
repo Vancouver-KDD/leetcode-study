@@ -2,7 +2,7 @@
 - Start from the midpoint and compare with the target. Run the function recursively
 
 ### Complexity
-- Time complexity - O(nlog(n))
+- Time complexity - O(log(n))
 - Space complexity - O(1)
 
 ### Solution
