@@ -27,11 +27,6 @@ class Solution:
         return -1
 
 
-
 solution = Solution()
 output = solution.search([3,5,6,0,1,2], 4)
 print(output)
-
-# l = 0
-# r = 5
-# m = 2
