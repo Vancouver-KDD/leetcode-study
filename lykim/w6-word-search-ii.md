@@ -1,10 +1,12 @@
 ## Approach
-- Initialize TrieNode representing a char by children, and boolean indicating if it's the end of the word or not. The children can utilize Hash, for the optimal search time complexity.
-- The search function goes until the end of the word while the prefix search will stop before.
+- From each cell, check if it matches any prefix of the given words list. Don't iterate by words but loop by board cells to avoid iterating the board multiple times.
+- Utilize the TrieNode structure, and set an insert function to add a word.
+- First add the given words to the Trie. Then iterate the board cell while backtracking with depth first search for each word recursively.
+- To ensure the used cell is not selected again, maintain a set called visited.
 
 ### Complexity
-- Time complexity - O(W*L), while W is the number of words in the Trie and L is the average length of the words. 
-- Space complexity - O(W*L)
+- Time complexity - O(n*(3^l), while n is the number of the grid and l is the max length of the words to search.
+- Space complexity - O(m), m is the size of total characters in the input list
 
 ### Solution
 ```
