@@ -2,60 +2,60 @@
 
 신청 링크 : [https://kdd-leetcode-project01.vercel.app/link](https://kdd-leetcode-project01.vercel.app/link)
 
-## 📝 목표
+## 📝 스터디 목표
 
-- Technical interview에 자신감 얻기
-- 스터디를 통해 알고리즘/자료구조 문제해결 능력 기르기
+- 기술 면접(Technical Interview)에 대한 **실전 감각과 자신감 향상**
+- 알고리즘과 자료구조 기반 **문제 해결 능력 강화**
+- 꾸준한 훈련을 통한 **코딩 인터뷰 역량 향상**
 
-## 🗓 기간
+## 🗓️ 진행 일정
 
-- 2024.09.29(일) - 2024.12.8(일) 오후 8시
+- 2025.06.1(일) - 2025.08.31(일) 오후 8시
 
-## ❓ 방법
+##  👨‍💻 진행 방법
 
-> 🖋 셀프 스터디
+> 개인 셀프 스터디 (주간 과제 수행)
 
-- 월-일에 거쳐 공지된 문제 풀기 (3-5 문제 예정)
-- 주제와 관련된 1 문제를 선정해 풀이과정을 웹에 올림
-- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 (Any programming language)
+- 매주 공지된 **3문제** 풀이
+- 공부 후 정답을 **pull request**에 **일요일** 모임전 까지 올리기 - 언어 자유 (Any programming language)
+- **파일명 규칙**
+  - `yyyy-MM-dd-problem-name.py`
+    *(예시: 2022-05-24-Best-Time-to-Buy-and-Sell-Stock.py)*
 
-> 🔖 모의 인터뷰
+> 주간 온라인 모의 인터뷰 (일요일 저녁 8시)
 
-- 온라인 모의 인터뷰 매주 일요일 저녁 8시
-- 2인 1조 페어링
-- 인터뷰어/인터뷰이 돌아가며 각 1문제씩 진행
-- 인터뷰어는 출제하는 문제의 다양한 솔루션을 숙지해야 하며 Follow-up Question도 준비
-- 문제는 그동안 풀었던 문제에서 랜덤 1개 선택
-- 줌 관리자 권한은 남은 사람에게 넘기고 종료
+- **2-3인 1조 페어 인터뷰 진행**
+  - **인터뷰어**: 문제 출제, 다양한 솔루션/Follow-up Question 준비
+  - **인터뷰이**: 풀이 설명 및 코드 작성
+- 문제는 **풀었던 3 문제 중 랜덤 1개** 선택
+- **인터뷰 종료 후 Zoom 관리자 권한 이양 및 종료**
 
-  
-## 💾 Rule of PR
+## 💰 디파짓 안내 (책임감 있는 참여 유도)
 
-- 파일이름:
-  ```
-  yyyy-MM-dd-problem-name.py
-  ```
-  (e.g. 2022-05-24-Best-Time-to-Buy-and-Sell-Stock.py)
+- **참가 디파짓**: **$30**
+- **환불 기준**: 스터디 **성실 완료 시 전액 환불** 
+    *(중도 포기 시 사유 불문 환불 불가)*
+> ### **디파짓 차감 규칙**
 
-## 💰 Deposit
+- **주간 PR 미제출 시**: **$5 차감**
+- **일요일 인터뷰 불참 시**: **$10 차감**
+- **일요일 인터뷰 지각 시**: **$5 차감**
+- **디파짓 소진 시 스터디 자동 종료**
 
-- 30불의 디파짓이 있습니다
-- 제출한 디파짓은 Challenge 완료에만 돌려드리며 사유 불문 중도 포기하시면 돌려드리지 않습니다
-- PR 및 카페 문제풀이 미제출 하시면 5불이 디파짓에서 차감됩니다
-- 일요일 인터뷰 사유 불문 불참시 10불이 디파짓에서 차감됩니다
-- 일요일 인터뷰 지각시 5불이 디파짓에서 차감됩니다
-- 디파짓 소진시 Challenge에서 제외됩니다
-- 벌금의 10%는 스터디 운영비로 사용됩니다
-- 디파짓 소진 없이 완료하신 분은 모인 벌금을 배분해드립니다
-- 남은 디파짓은 돌려드립니다
+> ### **운영비 및 보상**
+- 디파짓을 소진하지 않고 완료한 참여자에게 **남은 금액을 배분** 후
+    **남은 디파짓 전액 환불**
+
+>### **디파짓 입금 방법**
+- **E-Transfer**: [vancouverkdd@gmail.com](mailto:vancouverkdd@gmail.com)
 
 ## Link
-- E-Transfer: jk23oct@gmail.com  
-- How to fork: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
-- How to Create PR: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
-- Kakao Open chat: https://open.kakao.com/o/gNvIrgPg
-- Example Mock Interview: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
-- Posting Example: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
-- Question List: https://www.designgurus.io/course/grokking-the-coding-interview
-- Useful youtube: https://neetcode.io/practice
-- codeshare: https://codeshare.io
+- GitHub Fork 방법: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
+- Pull Request 생성 방법: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
+- Scheduler App: https://kdd-leetcode-project01.vercel.app/
+- 카카오톡 오픈채팅방: 
+- 모의 인터뷰 예시: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
+- 풀이 게시 예시: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
+- 추천 문제집: https://www.designgurus.io/course/grokking-the-coding-interview
+- 유용한 유투브채널: https://neetcode.io/practice
+- 코드쉐어 툴: https://codeshare.io
