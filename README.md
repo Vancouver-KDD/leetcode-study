@@ -1,7 +1,5 @@
 # Technical Interview Prep
 
-신청 링크 : [https://kdd-leetcode-project01.vercel.app/link](https://kdd-leetcode-project01.vercel.app/link)
-
 ## 📝 스터디 목표
 
 - 기술 면접(Technical Interview)에 대한 **실전 감각과 자신감 향상**
