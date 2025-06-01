@@ -50,7 +50,7 @@
 - GitHub Fork 방법: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - Pull Request 생성 방법: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
 - Scheduler App: https://kdd-leetcode-project01.vercel.app/
-- 카카오톡 오픈채팅방: 
+- 카카오톡 오픈채팅방: https://open.kakao.com/o/g1YPDczh
 - 모의 인터뷰 예시: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
 - 풀이 게시 예시: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
 - 추천 문제집: https://www.designgurus.io/course/grokking-the-coding-interview
