@@ -1,4 +1,5 @@
 // Author: Juyoung Moon
+// Solved on Wed, June 4, 2025 (KST).
 
 // KDD LeetCode Study Week 1: Array & Hashing
 // https://github.com/juyomo/leetcode-study
