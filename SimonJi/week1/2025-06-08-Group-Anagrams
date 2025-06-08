@@ -1,0 +1,16 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        hashTable = {}
+        copied = strs.copy()
+
+        for i in range(len(copied)):
+            char = sorted(copied[i])
+            copied[i] = "".join(char)
+
+        for i in range(len(strs)):
+            if(copied[i] in hashTable):
+                hashTable[copied[i]].append(strs[i])
+            else:
+                hashTable[copied[i]] = [strs[i]]
+
+        return list(hashTable.values())
