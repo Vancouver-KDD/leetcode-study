@@ -1,7 +1,6 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         freq_dict = {}
-        set_nums = set(nums)
 
         for num in nums:
             if freq_dict.get(num, 0):
