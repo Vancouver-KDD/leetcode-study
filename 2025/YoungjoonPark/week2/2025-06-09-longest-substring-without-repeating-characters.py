@@ -18,10 +18,3 @@ class Solution:
                 max_length = max(max_length, len(seen))
         
         return max_length
-
-
-
-
-
-
-       

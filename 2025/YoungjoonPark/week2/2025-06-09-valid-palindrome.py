@@ -1,5 +1,5 @@
 # KDD LeetCode Study Week 2: TwoPtr & SlideWin
-# Assignment 2
+# Assignment 3
 # Title: Valid Palindrome
 # Author: Youngjoon Park
 # Date: 2025-06-09
