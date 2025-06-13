@@ -1,7 +1,4 @@
 // Author: Juyoung Moon
-// Solved on/before Wed, June 4, 2025 (KST).
-// Apparently I did this on Feb 09. Yay! Free brownie points :D
-
 // KDD LeetCode Study Week 2: Two Pointer & Sliding Window.
 // https://github.com/juyomo/leetcode-study
 
@@ -11,8 +8,6 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        // if (s.size() < 2) return s.size();
-
         unordered_map<char, int> lastIndex;
         int startOfCurrString = 0;
 
