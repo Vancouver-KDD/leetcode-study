@@ -7,3 +7,5 @@ class Solution:
             if sum in hashmap:
                 return [hashmap[sum], i]
             hashmap[num] = i
+
+            
