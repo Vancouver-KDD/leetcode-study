@@ -1,4 +1,4 @@
-₩₩₩
+```
 import java.util.*;
 
 class Solution {
@@ -30,7 +30,7 @@ class Solution {
     }
 }
 
-₩₩₩
+```
 
 1. Time Complexity: O(n)
 The right pointer traverses the string from left to right once → O(n)
