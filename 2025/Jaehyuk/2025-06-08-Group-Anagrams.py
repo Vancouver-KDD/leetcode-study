@@ -10,6 +10,7 @@ class Solution:
         
         return list(ans.values())
     
+    
 sol = Solution()
 print(sol.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
 
