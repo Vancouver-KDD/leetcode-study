@@ -1,5 +1,4 @@
 def characterReplacement(s: str, k: int) -> int:
-    from collections import defaultdict
 
     count = defaultdict(int)
     left = 0
