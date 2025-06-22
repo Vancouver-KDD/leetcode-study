@@ -29,25 +29,25 @@ class Longest Substring Without Repeating Characters {
 
     public int lengthOfLongestSubstring2(String s) {
 
-        //make Set to store substring
-        Set<Character> set = new HashSet<>();
-        int left = 0, max = 0; //initiate window, max
+    // Create a HashSet to store unique characters in current window
+    Set<Character> set = new HashSet<>();
+    int left = 0, max = 0; // Initialize left pointer and maximum length
 
-        //for loop to make substring
-        for(int right = 0; right<s.length(); right++){
-            char c = s.charAt(right); //extend window
+    // Iterate through the string with right pointer
+    for (int right = 0; right < s.length(); right++) {
+        char c = s.charAt(right); // Get the current character
 
-            //if duplicate? then move window
-            while(set.contains(c)){
-                set.remove(s.charAt(left));
-                left++;
-            }
-
-            set.add(c); //put c in hashset
-            max = Math.max(max, right - left + 1);
+        // If duplicate character is found, shrink the window from the left
+        while (set.contains(c)) {
+            set.remove(s.charAt(left)); // Remove the leftmost character
+            left++; // Move the left pointer to the right
         }
 
-        return max;
-        }
+        set.add(c); // Add the current character to the set
+
+        // Update maximum length if current window is larger
+        max = Math.max(max, right - left + 1);
     }
+
+    return max; // Return the length of the longest substring without repeating characters
 }
