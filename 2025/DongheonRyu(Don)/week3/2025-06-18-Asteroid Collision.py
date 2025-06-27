@@ -1,3 +1,4 @@
+
 def asteroidCollision(asteroids):
     stack = []
     for a in asteroids:
