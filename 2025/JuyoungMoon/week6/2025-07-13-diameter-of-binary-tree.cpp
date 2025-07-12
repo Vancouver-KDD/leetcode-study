@@ -3,8 +3,8 @@
 // KDD LeetCode Study Week 6: Trees (DFS/BFS)
 // https://github.com/juyomo/leetcode-study
 
-// LeetCode #104.
-// https://leetcode.com/problems/maximum-depth-of-binary-tree/
+// LeetCode #543.
+// https://leetcode.com/problems/diameter-of-binary-tree/
 
 /**
  * Definition for a binary tree node.
@@ -18,9 +18,15 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var maxDepth = function(root) {
-    if (root === null) {
+
+function recur(root, depth) {
+
+}
+
+var diameterOfBinaryTree = function(root) {
+    if (root == null) {
         return 0;
     }
-    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+    
+    return recur(root)
 };
