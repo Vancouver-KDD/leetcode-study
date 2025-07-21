@@ -6,27 +6,36 @@
 // LeetCode #543.
 // https://leetcode.com/problems/diameter-of-binary-tree/
 
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
+class Solution {
+public:
+    // diameter
+    // - passes through root: leftDepth + rightDepth
+    // - doesn't pass through root: max(leftMaxDia, rightMaxDia)
+    // need to pass up depth and maxDia
+    // - depth = max(leftDepth, rightDepth) + 1;
+    // - maxDia = max(leftDepth + rightDepth, max(leftMaxDia, rightMaxDia))
+    int diaRecur(TreeNode* root, int& depth) {
+        if (root == nullptr) {
+            depth = 0;
+            return 0;
+        }
 
-function recur(root, depth) {
-
-}
-
-var diameterOfBinaryTree = function(root) {
-    if (root == null) {
-        return 0;
-    }
+        int leftDepth;
+        int rightDepth;
     
-    return recur(root)
+        int leftMaxDia = diaRecur(root->left, leftDepth);
+        int rightMaxDia = diaRecur(root->right, rightDepth);
+        depth = max(leftDepth, rightDepth) + 1;
+
+        return max(leftDepth + rightDepth, max(leftMaxDia, rightMaxDia));
+    }
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        if (root == nullptr) {
+            return 0;
+        }
+
+        int depth;
+        return diaRecur(root, depth);
+    }
 };
