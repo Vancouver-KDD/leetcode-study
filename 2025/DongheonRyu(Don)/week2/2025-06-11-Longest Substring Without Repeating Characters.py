@@ -1,3 +1,4 @@
+
 def lengthOfLongestSubstring(self, s: str) -> int:
         map = {}
         start = 0 

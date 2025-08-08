@@ -1,4 +1,5 @@
 
+
 def groupAnagrams(strs):
     result = {}
     for word in strs:
