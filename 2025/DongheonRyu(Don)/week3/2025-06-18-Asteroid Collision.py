@@ -1,5 +1,6 @@
 
 def asteroidCollision(asteroids):
+    
     stack = []
     for a in asteroids:
         while stack and a < 0 < stack[-1]:
