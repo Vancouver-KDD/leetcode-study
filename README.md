@@ -8,7 +8,7 @@
 
 ## 🗓️ 진행 일정
 
-- 2025.06.1(일) - 2025.08.31(일) 오후 8시
+- 2025.10.20(월) - 2025.012.15(월) 오후 8시
 
 ##  👨‍💻 진행 방법
 
@@ -39,18 +39,21 @@
 - **일요일 인터뷰 불참 시**: **$10 차감**
 - **디파짓 소진 시 스터디 자동 종료**
 
-> ### **운영비 및 보상**
-- 디파짓을 소진하지 않고 완료한 참여자에게 **남은 금액을 배분** 후
-    **남은 디파짓 전액 환불**
-
+> ### **환불 기준**
+- 성실히 참여 시: 전액 환불
+- 과제 미제출/불참 시: 차감 후 환불
+- 중도 포기 시: 환불 불가
+- 디파짓 소진 시: 스터디 자동 종료
+- 
 >### **디파짓 입금 방법**
 - **E-Transfer**: [vancouverkdd@gmail.com](mailto:vancouverkdd@gmail.com)
+- 스터디 시작 전까지 제출
 
 ## Link
 - GitHub Fork 방법: https://docs.github.com/en/get-started/quickstart/fork-a-repo  
 - Pull Request 생성 방법: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
-- Scheduler App: https://kdd-leetcode-project01.vercel.app/
-- 카카오톡 오픈채팅방: https://open.kakao.com/o/g1YPDczh
+- Scheduler App: https://kdd-leetcode-project01.vercel.app/link/5752495454454e5f42595f534f4f5f5748493430
+- 디스코드: https://discord.com/invite/fjbxKyFd
 - 모의 인터뷰 예시: https://youtu.be/rw4s4M3hFfs?si=rKGoO3lPRm5Xejul  
 - 풀이 게시 예시: https://leetcode.com/problems/two-sum/solutions/3556832/two-sums-3-easy-methods-in-python/
 - 추천 문제집: https://www.designgurus.io/course/grokking-the-coding-interview
