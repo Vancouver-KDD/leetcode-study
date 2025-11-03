@@ -34,3 +34,44 @@ var lengthOfLongestSubstring = function(s) {
     }
     return maxLen;
 };
+
+class Solution {
+    /**
+     * @param {string} s
+     * @return {number}
+     */
+    lengthOfLongestSubstring(s) {
+        let start=0, end=0;
+        let maxLength=0;
+        let count={}; //hash map
+
+        for(end=0;end<s.length;end++){
+              if (count[s[end].charCodeAt()] === undefined) {
+                count[s[end].charCodeAt()] = 0;
+            }
+            count[s[end].charCodeAt()]++; //first initial
+            //z:1,x:1,y:1 -> if z:2 in already in count -> slide window move
+            while(count[s[end].charCodeAt()]>1){
+                count[s[start].charCodeAt()]--;
+                start++;                
+            }
+            maxLength = Math.max(maxLength,end-start+1)
+        }
+        return maxLength;
+    }
+}
+
+/**
+ * string s , length longest substring withou duplicate
+ * 
+ * zxyzxyz 3
+ * start,end 
+ * counting charCodeAt() string
+ * if(immediately in count){
+ *  slide window size--
+ *  -> start ++, count()--
+ * }
+ * xxxx 1
+ * two pointer, sliding window
+ * 
+ */
