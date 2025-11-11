@@ -28,3 +28,16 @@ class Solution {
 
     }
 }
+
+/**
+ * Given a string s, find the length of the longest substring without duplicate characters.
+ *
+ * ex)
+ *
+ * Input: s = "abcabcbb"
+ * Output: 3
+ *
+ * - "abc"
+ * - "bca"
+ * - "cab"
+ */

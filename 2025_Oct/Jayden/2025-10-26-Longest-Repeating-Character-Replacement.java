@@ -26,7 +26,7 @@ class Solution {
             windowSize = rightPointer - leftPointer + 1;
 
             // shrink the size of the window from the left until the number of replacements needed is <= k
-            while (windowSize - maxFreq > k) {
+            if (windowSize - maxFreq > k) {
                 freq[s.charAt(leftPointer) - 'A'] -= 1;
                 leftPointer++;
                 windowSize = rightPointer - leftPointer + 1;
