@@ -1,0 +1,33 @@
+class TimeMap:
+
+    def __init__(self):
+        self.key_val_map = defaultdict(list)
+        
+
+    def set(self, key: str, value: str, timestamp: int) -> None:
+        self.key_val_map[key].append((timestamp, value))
+
+    def get(self, key: str, timestamp: int) -> str:
+        values = self.key_val_map[key]
+
+        start = 0 
+        end = len(values)-1
+        minimum = None 
+        while start <= end:
+            mid = (start+end)//2
+            if values[mid][0] == timestamp: 
+                return values[mid][1]
+            elif values[mid][0] > timestamp:
+                end = mid-1
+            else:
+                minimum = mid 
+                start = mid+1
+        return values[minimum][1] if minimum is not None else ""
+
+
+
+
+# Your TimeMap object will be instantiated and called as such:
+# obj = TimeMap()
+# obj.set(key,value,timestamp)
+# param_2 = obj.get(key,timestamp)
