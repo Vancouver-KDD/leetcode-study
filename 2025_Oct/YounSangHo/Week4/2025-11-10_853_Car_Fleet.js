@@ -1,36 +1,21 @@
-var MinStack = function () {
-  this.st = [];
-};
-
 /**
- * @param {number} val
- * @return {void}
+ * @param {number} target
+ * @param {number[]} position
+ * @param {number[]} speed
+ * @return {number}
  */
-MinStack.prototype.push = function (val) {
-  let min_val = this.getMin();
-  if (min_val === null || min_val > val) {
-    min_val = val;
+var carFleet = function (target, position, speed) {
+  const cars = position.map((p, i) => [p, speed[i]]);
+  cars.sort((a, b) => b[0] - a[0]);
+
+  const stack = [];
+
+  for (const [p, s] of cars) {
+    const time = (target - p) / s;
+    if (!stack.length || time > stack[stack.length - 1]) {
+      stack.push(time);
+    }
   }
-  this.st.push([val, min_val]);
-};
 
-/**
- * @return {void}
- */
-MinStack.prototype.pop = function () {
-  this.st.pop();
-};
-
-/**
- * @return {number}
- */
-MinStack.prototype.top = function () {
-  return this.st.length ? this.st[this.st.length - 1][0] : null;
-};
-
-/**
- * @return {number}
- */
-MinStack.prototype.getMin = function () {
-  return this.st.length ? this.st[this.st.length - 1][1] : null;
+  return stack.length;
 };
