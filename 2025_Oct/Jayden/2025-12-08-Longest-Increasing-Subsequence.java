@@ -26,3 +26,39 @@ class Solution {
         return maxLength;
     }
 }
+
+
+class Solution {
+    /**
+        Time Complexity: O(nlogn)
+        Space Complexity: O(n)
+     */
+    public int lengthOfLIS(int[] nums) {
+        List<Integer> result = new ArrayList<>();
+
+        for (int num : nums) {
+            int left = 0;
+            int right = result.size();
+
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (num <= result.get(mid)) {
+                    right = mid;
+                } else {
+                    left = mid + 1;
+                }
+            }
+
+            // extend the sequence if num is larger than all elements
+            if (left == result.size()) {
+                result.add(num);
+            } else {
+                // replace the element at left index to make the tail smaller
+                result.set(left, num);
+            }
+        }
+
+        return result.size();
+    }
+
+}
